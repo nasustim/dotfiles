@@ -29,5 +29,7 @@ alias apache="sudo /usr/sbin/apachectl"
 export PATH="/Library/TeX/texbin:$PATH"
 export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
 
-export PATH="$PATH:/Applications/microchip/xc8/v1.44/bin"
+export PATH="$PATH:/Applications/microchip/xc8/v1.44/bin:$HOME/.cargo/bin"
 
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
