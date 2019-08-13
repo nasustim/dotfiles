@@ -1,35 +1,32 @@
-#format prompt
+# init prompt
 export PS1="\[\e[0;32m\][\u@\h\[\e[0m\] \[\e[0;35m\]\w\[\e[0m\]\[\e[0;32m\]]\$\[\e[0m\] "
 
-#applications
+# applications prefix
 alias vscode="open -a \"/Applications/Visual Studio Code.app\""
-alias sublime="open -a \"/Applications/Sublime Text.app\""
-alias atom="open -a \"/Applications/Atom.app\""
 
-#coloring
+# terminal coloring
 export LSCOLORS=cxfxcxdxbxegedabagacad
-alias ls="ls -G"
-alias grep="grep -G"
 
-#useful
+# for useful
 alias lla="ls -la"
 alias ll="ls -l"
 alias la="ls -a"
 alias df="df -h"
 alias rm="rm -i"
+alias ls="ls -G"
+alias grep="grep -G"
 
-alias gca="git checkout"
-alias gcm="git commit -am"
-alias gpo="git push origin"
-alias gmg="git merge"
-alias gpl="git pull"
-
+# Buint-in Apache in Macintosh
 alias apache="sudo /usr/sbin/apachectl"
 
+# export PATHs to Development Environment
+## TeX
 export PATH="/Library/TeX/texbin:$PATH"
+## Node.js
 export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
-
-export PATH="$PATH:/Applications/microchip/xc8/v1.44/bin:$HOME/.cargo/bin"
-
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+## Rust
+export PATH="$PATH:/Applications/microchip/xc8/v1.44/bin:$HOME/.cargo/bin"
+## Golang
+export GOPATH="/home/mitsu/go"
+export PATH="$PATH:$GOPATH/bin"
