@@ -20,6 +20,8 @@ alias grep="grep -G"
 alias apache="sudo /usr/sbin/apachectl"
 
 # export PATHs to Development Environment
+## local
+export PATH="/usr/local/bin:$PATH"
 ## TeX
 export PATH="/Library/TeX/texbin:$PATH"
 ## Node.js
@@ -28,5 +30,5 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 ## Rust
 export PATH="$PATH:/Applications/microchip/xc8/v1.44/bin:$HOME/.cargo/bin"
 ## Golang
-export GOPATH="/home/mitsu/go"
+export GOPATH="/Users/mitsu/go"
 export PATH="$PATH:$GOPATH/bin"
