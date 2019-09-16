@@ -20,6 +20,8 @@ alias grep="grep -G"
 alias apache="sudo /usr/sbin/apachectl"
 
 # export PATHs to Development Environment
+## local
+export PATH="/usr/local/bin:$PATH"
 ## TeX
 export PATH="/Library/TeX/texbin:$PATH"
 ## Node.js
