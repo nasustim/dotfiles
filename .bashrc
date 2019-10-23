@@ -32,3 +32,7 @@ export PATH="$PATH:/Applications/microchip/xc8/v1.44/bin:$HOME/.cargo/bin"
 ## Golang
 export GOPATH="/Users/mitsu/go"
 export PATH="$PATH:$GOPATH/bin"
+
+## TeX
+export BIBINPUTS="$BIBINPUTS:$HOME/Library/texmf/jbibtex/bib:$HOME/Documents/bibtex-my-repo"
+export BSTINPUTS="$BSTINPUTS:$HOME/Library/texmf/jbibtex/bst"
