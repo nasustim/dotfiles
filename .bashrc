@@ -34,5 +34,7 @@ export GOPATH="/Users/mitsu/go"
 export PATH="$PATH:$GOPATH/bin"
 
 ## TeX
-export BIBINPUTS="$BIBINPUTS:$HOME/Library/texmf/jbibtex/bib:$HOME/Documents/bibtex-my-repo"
-export BSTINPUTS="$BSTINPUTS:$HOME/Library/texmf/jbibtex/bst"
+export BIBINPUTS="$BIBINPUTS:$HOME/Library/texmf/jbibtex/bib"
+export BSTINPUTS="$BSTINPUTS:$HOME/Library/texmf/jbibtex/bst" 
+ 
+export BIBINPUTS="$BIBINPUTS:$HOME/Documents/bib-master-thesis"
