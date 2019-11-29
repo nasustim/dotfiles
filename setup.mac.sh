@@ -7,6 +7,6 @@ ln -fsv "$(pwd)/.bashrc" "$HOME/.bashrc"
 ln -fsv "$(pwd)/.vimrc" "$HOME/.vimrc"
 
 ## Microsoft Visual Studio Code
-ln -fsv "$(pwd)/vscode/setting.json" "$HOME/Library/Application Support/Code/User/setting.json"
+ln -fsv "$(pwd)/vscode/settings.json" "$HOME/Library/Application Support/Code/User/settings.json"
 ### cpp runner
 ln -fsv "$(pwd)/vscode/vscode.runner.cpp.sh" "$HOME/vscode.runner.cpp.sh"
