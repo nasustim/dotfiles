@@ -1,9 +1,6 @@
 # init prompt
 export PS1="\[\e[0;32m\][\u@\h\[\e[0m\] \[\e[0;35m\]\w\[\e[0m\]\[\e[0;32m\]]\$\[\e[0m\] "
 
-# applications prefix
-alias vscode="open -a \"/Applications/Visual Studio Code.app\""
-
 # terminal coloring
 export LSCOLORS=cxfxcxdxbxegedabagacad
 

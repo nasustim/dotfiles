@@ -12,3 +12,6 @@ fi
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+# Add Visual Studio Code (code)
+export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"

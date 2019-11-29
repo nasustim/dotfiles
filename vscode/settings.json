@@ -1,0 +1,26 @@
+{
+    "editor.detectIndentation": false,
+    "python.jediEnabled": false,
+    "editor.tabSize": 2,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "git.autofetch": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "workbench.startupEditor": "newUntitledFile",
+    "C_Cpp.updateChannel": "Insiders",
+    "files.exclude": {
+      "**/.classpath": true,
+      "**/.project": true,
+      "**/.settings": true,
+      "**/.factorypath": true
+    },
+    "julia.enableTelemetry": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "terminal.integrated.shell.osx": "/bin/bash",
+    "window.zoomLevel": 0,
+    "code-runner.runInTerminal": true,
+    "runner.languageMap": {
+      "cpp": "$HOME/vscode.runner.cpp.sh"
+    },
+    "workbench.colorTheme": "Monokai"
+}
