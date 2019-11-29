@@ -1,7 +1,7 @@
 #!/bin/sh
 
-ln -fsv "$(pwd)/.bash_profile" "$HOME/.bash_profile"
-ln -fsv "$(pwd)/.bashrc" "$HOME/.bashrc"
+ln -fsv "$(pwd)/.zshenv" "$HOME/.zshenv"
+ln -fsv "$(pwd)/.zshrc" "$HOME/.zshrc"
 
 ## Vim
 ln -fsv "$(pwd)/.vimrc" "$HOME/.vimrc"

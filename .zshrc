@@ -1,5 +1,5 @@
 # init prompt
-export PS1="\[\e[0;32m\][\u@\h\[\e[0m\] \[\e[0;35m\]\w\[\e[0m\]\[\e[0;32m\]]\$\[\e[0m\] "
+PROMPT="%F{green}[%n@%m%f %F{blue}%~%f%F{green}]$%f "
 
 # terminal coloring
 export LSCOLORS=cxfxcxdxbxegedabagacad
