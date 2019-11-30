@@ -16,7 +16,7 @@
     },
     "julia.enableTelemetry": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "terminal.integrated.shell.osx": "/bin/bash",
+    "terminal.integrated.shell.osx": "/bin/zsh",
     "window.zoomLevel": 0,
     "code-runner.runInTerminal": true,
     "runner.languageMap": {
