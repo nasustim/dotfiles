@@ -1,7 +1,9 @@
 #!/bin/sh
 
-ln -fsv "$(pwd)/.zshenv" "$HOME/.zshenv"
-ln -fsv "$(pwd)/.zshrc" "$HOME/.zshrc"
+ln -fsv "$(pwd)/macos/.zshenv" "$HOME/.zshenv"
+ln -fsv "$(pwd)/macos/.zshrc" "$HOME/.zshrc"
+
+source "$HOME/.zshenv"
 
 ## Vim
 ln -fsv "$(pwd)/.vimrc" "$HOME/.vimrc"

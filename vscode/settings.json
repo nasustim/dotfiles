@@ -49,5 +49,7 @@
     "javascript.referencesCodeLens.enabled": true,
     "typescript.implementationsCodeLens.enabled": true,
     "typescript.locale": "ja",
-    "typescript.referencesCodeLens.enabled": true
+    "typescript.referencesCodeLens.enabled": true,
+    "workbench.iconTheme": "vscode-icons",
+    "inline-bookmarks.default.words.blue": "@audit\\-info[ \\t\\n], @todo[ \\t\\n], @TODO[ \\t\\n], @ToDo[ \\t\\n], @note[ \\t\\n], @remind[ \\t\\n], @follow-up[ \\t\\n]"
 }
