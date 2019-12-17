@@ -52,5 +52,6 @@
     "typescript.referencesCodeLens.enabled": true,
     "workbench.iconTheme": "vscode-icons",
     "inline-bookmarks.default.words.blue": "@audit\\-info[ \\t\\n], @todo[ \\t\\n], @TODO[ \\t\\n], @ToDo[ \\t\\n], @note[ \\t\\n], @remind[ \\t\\n], @follow-up[ \\t\\n]",
-    "latex-workshop.message.update.show": false
+    "latex-workshop.message.update.show": false,
+    "workbench.editor.enablePreview": false
 }
