@@ -9,7 +9,7 @@ source "$HOME/.zshenv"
 ln -fsv "$(pwd)/.vimrc" "$HOME/.vimrc"
 
 ## Microsoft Visual Studio Code
-ln -fsv "$(pwd)/vscode/settings.json" "$HOME/.vscode/settings.json"
+ln -fsv "$(pwd)/vscode/settings.json" "$HOME/Library/Application Support/Code/User/settings.json"
 ### cpp runner
 ln -fsv "$(pwd)/vscode/c_cpp_properties.json" "$HOME/.vscode/c_cpp_properties.json"
 ln -fsv "$(pwd)/vscode/runner.cpp.sh" "$HOME/.vscode/runner.cpp.sh"
