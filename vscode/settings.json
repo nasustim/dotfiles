@@ -21,7 +21,7 @@
     "window.zoomLevel": 0,
     "code-runner.runInTerminal": true,
     "runner.languageMap": {
-      "cpp": "$HOME/vscode.runner.cpp.sh"
+      "cpp": "$HOME/.vscode/runner.cpp.sh"
     },
     "workbench.colorTheme": "Monokai",
     "extensions.showRecommendationsOnlyOnDemand": true,
