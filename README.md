@@ -1,19 +1,25 @@
-# dotfile  
+# My dotfiles
 
-my settings
+## prepare
 
-## setup
-### macOS (use zsh)
+```
+$ make clean
+```
 
-    $ cd $THIS_REPO
-    $ sh setup.macos.sh
+## setup zsh environment on private machine
 
-### Linux
+```
+$ cd $THIS_REPOSITORY
+$ make private
+```
 
-    $ cd $THIS_REPO
-    $ sh setup.linux.sh
+## setup zsh environment on workspace
 
-### Windows Sub-Sysytem Linux
+```
+$ cd $THIS_REPOSITORY
+$ make work
+```
 
-    $ cd $THIS_REPO
-    $ sh setup.winls.sh
+## setup bash environment
+
+work in progress......
