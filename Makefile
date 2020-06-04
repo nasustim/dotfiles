@@ -14,11 +14,14 @@ clean:
 	unlink "${HOME}/.zshrc"
 	unlink "${HOME}/.vimrc"
 	unlink "${HOME}/.zsh_os_common"
+	unlink "${HOME}/.tmux.conf"
 	echo "clean conf files"
 
 common:
 	# vim
 	ln -fsv "${PWD}/.vimrc" "${HOME}/.vimrc"
+	# tmux
+	ln -fsv "${PWD}/.tmux.conf" "${HOME}/.tmux.conf"
 
 private:
 	echo "OS: ${OS}"
