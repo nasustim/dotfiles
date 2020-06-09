@@ -9,7 +9,8 @@ endif
 
 .PHONY: clean common private work
 clean:
-	unlink "${HOME}/.zshenv"
+	unlink "${HOME}/.zlogin"
+	unlink "${HOME}/.zlogout"
 	unlink "${HOME}/.zsh_common"
 	unlink "${HOME}/.zshrc"
 	unlink "${HOME}/.vimrc"
