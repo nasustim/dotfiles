@@ -14,9 +14,11 @@ clean:
 	unlink "${HOME}/.zsh_common"
 	unlink "${HOME}/.zshrc"
 	unlink "${HOME}/.vimrc"
-	unlink "${HOME}/.zsh_os_common"
 	unlink "${HOME}/.tmux.conf"
 	echo "clean conf files"
+
+	echo "clean file for workspace"
+	unlink "${HOME}/.zsh_os_common"
 
 common:
 	# vim
@@ -25,7 +27,7 @@ common:
 	ln -fsv "${PWD}/.tmux.conf" "${HOME}/.tmux.conf"
 
 private:
-	echo "OS: ${OS}"
+	echo "OS: ${shell uname}"
 	make common
 	ln -fsv "${PWD}/.zlogin" "${HOME}/.zlogin"
 	ln -fsv "${PWD}/.zsh_common" "${HOME}/.zsh_common"
@@ -33,7 +35,7 @@ private:
 	ln -fsv "${PWD}/.zlogout" "${HOME}/.zlogout"
 
 work:
-	echo "OS: ${OS}"
+	echo "OS: ${shell uname}"
 	make common
 	ln -fsv "${PWD}/work/.zlogin" "${HOME}/.zlogin"
 	ln -fsv "${PWD}/.zsh_common" "${HOME}/.zsh_common"
