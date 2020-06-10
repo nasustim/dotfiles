@@ -27,14 +27,16 @@ common:
 private:
 	echo "OS: ${OS}"
 	make common
-	ln -fsv "${PWD}/.zshenv" "${HOME}/.zshenv"
+	ln -fsv "${PWD}/.zlogin" "${HOME}/.zlogin"
 	ln -fsv "${PWD}/.zsh_common" "${HOME}/.zsh_common"
 	ln -fsv "${CONF_PATH}/.zshrc" "${HOME}/.zshrc"
+	ln -fsv "${PWD}/.zlogout" "${HOME}/.zlogout"
 
 work:
 	echo "OS: ${OS}"
 	make common
-	ln -fsv "${PWD}/work/.zshenv" "${HOME}/.zshenv"
+	ln -fsv "${PWD}/work/.zlogin" "${HOME}/.zlogin"
 	ln -fsv "${PWD}/.zsh_common" "${HOME}/.zsh_common"
 	ln -fsv "${CONF_PATH}/.zshrc" "${HOME}/.zsh_os_common"
 	ln -fsv "${PWD}/work/.zshrc" "${HOME}/.zshrc"
+	ln -fsv "${PWD}/.zlogout" "${HOME}/.zlogout"
