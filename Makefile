@@ -37,7 +37,7 @@ private:
 work:
 	echo "OS: ${shell uname}"
 	make common
-	ln -fsv "${PWD}/work/.zlogin" "${HOME}/.zlogin"
+	ln -fsv "${PWD}/.zlogin" "${HOME}/.zlogin"
 	ln -fsv "${PWD}/.zsh_common" "${HOME}/.zsh_common"
 	ln -fsv "${CONF_PATH}/.zshrc" "${HOME}/.zsh_os_common"
 	ln -fsv "${PWD}/work/.zshrc" "${HOME}/.zshrc"
