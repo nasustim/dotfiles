@@ -1,9 +1,10 @@
-# terminalcoloring
-export LSCOLORS=cxfxcxdxbxegedabagacad
+# anyenv
+export PATH="$HOME/.anyenv/bin:$PATH"
 
-# Buint-in Apache
-alias apache="sudo /usr/sbin/apachectl"
+# anyenv
+eval "$(anyenv init -)"
 
+<<<<<<< HEAD
 ## local
 export PATH="/usr/local/bin:$PATH"
 ## Add Visual Studio Code (code)

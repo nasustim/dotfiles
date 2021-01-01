@@ -15,6 +15,7 @@ clean:
 	unlink "${HOME}/.zshrc"
 	unlink "${HOME}/.vimrc"
 	unlink "${HOME}/.tmux.conf"
+	unlink "${HOME}/.gitignore_global"
 	echo "clean conf files"
 
 	echo "clean file for workspace"
@@ -25,6 +26,8 @@ common:
 	ln -fsv "${PWD}/.vimrc" "${HOME}/.vimrc"
 	# tmux
 	ln -fsv "${PWD}/.tmux.conf" "${HOME}/.tmux.conf"
+	# git
+	ln -fsv "${PWD}/.gitignore_global" "${HOME}/.gitignore_global"
 
 private:
 	echo "OS: ${shell uname}"
