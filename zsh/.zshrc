@@ -1,16 +1,4 @@
-# aliases
-alias lla="ls -la"
-alias ll="ls -l"
-alias la="ls -a"
-alias df="df -h"
-alias rm="rm -i"
-alias ls="ls -G"
-alias grep="grep -G"
-
-## gi
-function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
-
-# display branch name & status
+# affect branch name & status
 function current-branch() {
   local branch_name st branch_status
 
@@ -42,3 +30,24 @@ function current-branch() {
 }
 setopt prompt_subst
 PROMPT='%F{green}[%n@%m%f %F{blue}%~%f$(current-branch)%F{green}]$%f '
+
+# get .gitignore
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
+# terminal settings
+export LSCOLORS=cxfxcxdxbxegedabagacad
+## aliases
+alias lla="ls -la"
+alias ll="ls -l"
+alias la="ls -a"
+alias df="df -h"
+alias rm="rm -i"
+alias ls="ls -G"
+alias grep="grep -G"
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # call buint-in apache
+  alias apache="sudo /usr/sbin/apachectl"
+elif [[ "$OSTYPE" == "linux"* ]]; then
+  
+fi
