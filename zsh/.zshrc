@@ -48,6 +48,9 @@ alias grep="grep -G"
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # call buint-in apache
   alias apache="sudo /usr/sbin/apachectl"
+
+  ## Visual Studio Code
+  export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 elif [[ "$OSTYPE" == "linux"* ]]; then
-  
+
 fi
