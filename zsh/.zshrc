@@ -2,11 +2,7 @@
 function current-branch() {
   local branch_name st branch_status
 
-  if [ ! -e  ".git" ]; then
-    return
-  fi
-
-  branch_name=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
+  branch_name=`git branch --show-current 2> /dev/null`
   if [[ "$branch_name" == "master" || "$branch_name" == "main" ]]; then
     branch_name="M"
   elif [[ "$branch_name" == "develop" ]]; then
