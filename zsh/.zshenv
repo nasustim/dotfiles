@@ -10,7 +10,3 @@ export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 ## golang binary
 export PATH="$PATH:$GOPATH/bin"
-
-# anyenv
-export PATH="$HOME/.anyenv/bin:$PATH"  # priorize *env runtime then system version
-eval "$(anyenv init -)"
