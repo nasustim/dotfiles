@@ -47,10 +47,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   ## Visual Studio Code
   export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-
-  # anyenv
-  export PATH="$HOME/.anyenv/bin:$PATH"  # priorize *env runtime then system version
-  eval "$(anyenv init -)"
 elif [[ "$OSTYPE" == "linux"* ]]; then
+
+# anyenv
+export PATH="$HOME/.anyenv/bin:$PATH"  # priorize *env runtime then system version
+eval "$(anyenv init -)"
 
 fi
