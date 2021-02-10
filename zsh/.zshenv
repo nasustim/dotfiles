@@ -1,5 +1,5 @@
 ## prioritize /usr/local
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:$PATH"
 
 # any paths
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
