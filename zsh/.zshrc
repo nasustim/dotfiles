@@ -47,7 +47,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   ## Visual Studio Code
   export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-elif [[ "$OSTYPE" == "linux"* ]]; then
+# elif [[ "$OSTYPE" == "linux"* ]]; then
 fi
 
 # anyenv
