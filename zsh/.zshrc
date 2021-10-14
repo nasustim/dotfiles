@@ -25,7 +25,8 @@ function current-branch() {
   echo "${branch_status}$branch_name%k"
 }
 setopt prompt_subst
-PROMPT='%F{green}[%n@%m%f %F{blue}%~%f$(current-branch)%F{green}]$%f '
+#PROMPT='%F{green}[%n@%m%f %F{blue}%~%f$(current-branch)%F{green}]$%f '
+PROMPT='%F{green}[%n@%m%f %F{blue}%~%f%F{green}]$%f '
 
 # get .gitignore
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
