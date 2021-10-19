@@ -25,8 +25,8 @@ function current-branch() {
   echo "${branch_status}$branch_name%k"
 }
 setopt prompt_subst
-#PROMPT='%F{green}[%n@%m%f %F{blue}%~%f$(current-branch)%F{green}]$%f '
-PROMPT='%F{green}[%n@%m%f %F{blue}%~%f%F{green}]$%f '
+#PROMPT='%F{green}[%n@%m%f %F{blue}%c%f$(current-branch)%F{green}]$%f '
+PROMPT='%F{green}[%n@%m%f %F{blue}%c%f%F{green}]$%f '
 
 # get .gitignore
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
@@ -49,7 +49,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   ## Visual Studio Code
   export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-# elif [[ "$OSTYPE" == "linux"* ]]; then
 fi
 
 # The next line updates PATH for the Google Cloud SDK.
