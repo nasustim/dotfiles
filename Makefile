@@ -5,17 +5,16 @@ PWD = $(shell pwd)
 all: vim tmux git zsh
 
 vim:
-	ln -fsv "${PWD}/vim/.vimrc" "${HOME}/.vimrc"
+	sh vim/setup.sh
 
 tmux:
-	ln -fsv "${PWD}/tmux/.tmux.conf" "${HOME}/.tmux.conf"
+	sh tmux/setup.sh
 
 git:
-	ln -fsv "${PWD}/git/.gitignore_global" "${HOME}/.gitignore_global"
+	sh git/setup.sh
 
 zsh:
-	ln -fsv "${PWD}/zsh/.zshenv" "${HOME}/.zshenv"
-	ln -fsv "${PWD}/zsh/.zshrc" "${HOME}/.zshrc"
+	sh zsh/setup.sh
 
 clean:
 	unlink "${HOME}/.zshrc"
