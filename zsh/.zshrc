@@ -1,32 +1,16 @@
-# affect branch name & status
-function current-branch() {
-  local branch_name st branch_status
-
-  branch_name=`git branch --show-current 2> /dev/null`
-  if [[ "$branch_name" == "master" || "$branch_name" == "main" ]]; then
-    branch_name="M"
-  elif [[ "$branch_name" == "develop" ]]; then
-    branch_name="D"
-  fi
-
-  st=`git status 2> /dev/null`
-  if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
-    branch_status=":%K{green}"
-  elif [[ -n `echo "$st" | grep "^Untracked files"` ]]; then
-    branch_status=":%K{red}?"
-  elif [[ -n `echo "$st" | grep "^Changes not staged for commit"` ]]; then
-    branch_status=":%K{red}+"
-  elif [[ -n `echo "$st" | grep "^Changes to be committed"` ]]; then
-    branch_status=":%K{yellow}!"
-  else
-    branch_status=":%K{white}"
-  fi
-
-  echo "${branch_status}$branch_name%k"
-}
+## setup git-prompt
+## ref: https://qiita.com/mikan3rd/items/d41a8ca26523f950ea9d#pencil-zshrc-%E3%81%AB%E8%A8%AD%E5%AE%9A%E8%BF%BD%E8%A8%98
+source ~/.zsh/git-prompt.sh
+fpath=(~/.zsh $fpath)
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+autoload -Uz compinit && compinit
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUPSTREAM=auto
+## setup prompt
 setopt prompt_subst
-#PROMPT='%F{green}[%n@%m%f %F{blue}%c%f$(current-branch)%F{green}]$%f '
-PROMPT='%F{green}[%n@%m%f %F{blue}%c%f%F{green}]$%f '
+PROMPT='%F{green}[%n@%m%f %F{blue}%c%f$(__git_ps1 "(%s)")%F{green}]$%f '
 
 # get .gitignore
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
