@@ -41,6 +41,7 @@ alias df="df -h"
 alias rm="rm -i"
 alias ls="ls -G"
 alias grep="grep -G"
+alias reload="source ~/.zshrc"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # call buint-in apache
@@ -50,10 +51,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 # elif [[ "$OSTYPE" == "linux"* ]]; then
 fi
-
-# anyenv
-export PATH="$HOME/.anyenv/bin:$PATH"  # priorize *env runtime then system version
-eval "$(anyenv init -)"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
