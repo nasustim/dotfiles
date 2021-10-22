@@ -10,7 +10,7 @@ GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 ## setup prompt
 setopt prompt_subst
-PROMPT='%F{green}[%n@%m%f %F{blue}%c%f$(__git_ps1 "(%s)")%F{green}]$%f '
+PROMPT='%F{green}[%n@%m%f %F{blue}%c%f%F{green}]%f$(__git_ps1 "(%s)") '
 
 # get .gitignore
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
