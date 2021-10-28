@@ -27,6 +27,12 @@ alias ls="ls -G"
 alias grep="grep -G"
 alias reload="source ~/.zshrc"
 
+# anyenv
+export PATH="$HOME/.anyenv/bin:$PATH"
+if type "anyenv" > /dev/null 2>&1; then
+  eval "$(anyenv init -)"
+fi
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # call buint-in apache
   alias apache="sudo /usr/sbin/apachectl"
