@@ -37,8 +37,13 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # call buint-in apache
   alias apache="sudo /usr/sbin/apachectl"
 
-  ## Visual Studio Code
+  # Visual Studio Code
   export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+  # load zcompletion of homebrew packages
+  fpath=(/usr/local/share/zsh/site-functions $fpath)
+  autoload -U compinit
+  compinit
 fi
 
 # The next line updates PATH for the Google Cloud SDK.
