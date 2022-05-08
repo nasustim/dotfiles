@@ -1,9 +1,13 @@
-# My dotfiles
+# nasustim/dotfiles
 
-## setup
+## instlation
+
+desirable:
+- change default shell to zsh
+- install environments `go` and `cargo(rust)`
 
 ```
-$ git clone $THIS_REMOTE_REPO_URL
+$ git clone git@github.com:nasustim/dotfiles.git dotfiles
 
 $ cd dotfiles
 $ make
