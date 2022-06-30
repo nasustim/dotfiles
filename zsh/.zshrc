@@ -33,6 +33,7 @@ if type "anyenv" > /dev/null 2>&1; then
   eval "$(anyenv init -)"
 fi
 
+# macOS
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # call buint-in apache
   alias apache="sudo /usr/sbin/apachectl"
@@ -44,6 +45,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   fpath=(/usr/local/share/zsh/site-functions $fpath)
   autoload -U compinit
   compinit
+
+  # open iOS Simulator
+  alias ios="open -a Simulator"
 fi
 
 # The next line updates PATH for the Google Cloud SDK.
