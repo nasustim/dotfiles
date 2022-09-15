@@ -1,4 +1,4 @@
 #!/bin/sh
 
-export IS_TEST=1
+export IS_TEST=0
 make
