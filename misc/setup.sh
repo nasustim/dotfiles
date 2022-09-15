@@ -17,5 +17,11 @@ if [ "$(uname)" == 'Darwin' ]; then
     echo "add symbolic link .Brewfile"
     ln -fsv "${PWD}/${TYPE}/macos/.Brewfile" "${HOME}/.Brewfile"
   fi
-  brew bundle --file ~/.Brewfile
+
+  # brew installに時間がかかりまくるので、テストでは検証しない
+  if [ $IS_TEST -eq 1 ]; then
+    echo "skip test: brew bundle --file ~/.Brewfile"
+  else
+    brew bundle --file ~/.Brewfile
+  fi
 fi
