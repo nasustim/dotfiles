@@ -28,12 +28,8 @@ alias grep="grep -G"
 alias reload="source ~/.zshrc"
 
 # homebrew
-alias "brew-write"="brew bundle dump --global --force"
-function brew-rewrite () {
-  brew bundle cleanup --global --force
-
-  brew-write
-}
+alias "brew-bundle"="brew bundle dump --global --force"
+alias "brew-cleanup"="brew bundle cleanup --global --force"
 
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
