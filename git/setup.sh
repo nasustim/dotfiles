@@ -14,6 +14,12 @@ else
   ln -fsv "${PWD}/git/.gitconfig" "${HOME}/.gitconfig"
 fi
 
+if [ ! -e "${PWD}/git/.gitconfig_formal" ]; then
+  echo "!!! please make git/.gitconfig_formal"
+  echo "abort"
+  exit -1
+fi
+
 if [ -L "${HOME}/.gitconfig_formal" ]; then
   echo "skip link .gitconfig_formal"
 else
