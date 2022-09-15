@@ -13,4 +13,4 @@ jobs:
           cd ./git
           cp .gitconfig_formal.example .gitconfig_formal
       - name: make
-        run: ./test.sh
+        run: make
