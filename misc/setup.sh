@@ -18,10 +18,6 @@ if [ "$(uname)" == 'Darwin' ]; then
     ln -fsv "${PWD}/${TYPE}/macos/.Brewfile" "${HOME}/.Brewfile"
   fi
 
-  # brew installに時間がかかりまくるので、テストでは検証しない
-  if [ $IS_TEST -eq 1 ]; then
-    echo "skip test: brew bundle --file ~/.Brewfile"
-  else
-    brew bundle --file ~/.Brewfile
-  fi
+  echo "prepare Brewfile"
+  echo "you have to execute '$ brew bundle --file ~/.Brewfile'"
 fi
