@@ -8,5 +8,9 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
+      - name: make .gitconfig_formal
+        run: |
+          cd ./git
+          cp .gitconfig_formal.example .gitconfig_formal
       - name: make
         run: make
