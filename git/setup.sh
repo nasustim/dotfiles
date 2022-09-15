@@ -13,3 +13,10 @@ else
   echo "add symbolic link .gitconfig"
   ln -fsv "${PWD}/git/.gitconfig" "${HOME}/.gitconfig"
 fi
+
+if [ -L "${HOME}/.gitconfig_formal" ]; then
+  echo "skip link .gitconfig_formal"
+else
+  echo "add symbolic link .gitconfig_formal"
+  ln -fsv "${PWD}/git/.gitconfig_formal" "${HOME}/.gitconfig_formal"
+fi
