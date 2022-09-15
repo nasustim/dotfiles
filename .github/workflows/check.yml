@@ -1,0 +1,11 @@
+name: check
+
+on:
+  push:
+
+jobs:
+  on-macos:
+    runs-on: macos-latest
+    steps:
+      - name: make
+        run: make
