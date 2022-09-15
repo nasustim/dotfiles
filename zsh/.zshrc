@@ -27,6 +27,14 @@ alias ls="ls -G"
 alias grep="grep -G"
 alias reload="source ~/.zshrc"
 
+# homebrew
+alias "brew-write"="brew bundle dump --global --force"
+function brew-rewrite () {
+  brew bundle cleanup --global --force
+
+  brew-write
+}
+
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 if type "anyenv" > /dev/null 2>&1; then
