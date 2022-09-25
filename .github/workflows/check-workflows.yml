@@ -1,6 +1,8 @@
 name: check workflows
 on:
   push:
+    paths:
+      - ".github/workflows/**"
 
 jobs:
   lint:
