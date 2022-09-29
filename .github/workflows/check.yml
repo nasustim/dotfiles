@@ -14,3 +14,5 @@ jobs:
           cp .gitconfig_formal.example .gitconfig_formal
       - name: make
         run: make
+      - name: install
+        run: brew bundle --file ~/.Brewfile
