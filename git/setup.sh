@@ -15,9 +15,8 @@ else
 fi
 
 if [ ! -e "${PWD}/git/.gitconfig_formal" ]; then
-  echo "!!! please make git/.gitconfig_formal"
-  echo "abort"
-  exit -1
+  cp "${PWD}/git/.gitconfig_formal.example" "${PWD}/git/.gitconfig_formal"
+  echo "make git/.gitconfig_formal. edit it!"
 fi
 
 if [ -L "${HOME}/.gitconfig_formal" ]; then
