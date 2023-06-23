@@ -1,4 +1,4 @@
-name: check workflows
+name: Test workflows
 on:
   push:
     paths:
