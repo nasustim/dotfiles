@@ -7,7 +7,7 @@ jobs:
   on-macos:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.5.3
       - name: make .gitconfig_formal
         run: |
           cd ./git
