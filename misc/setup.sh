@@ -10,3 +10,10 @@ else
   ln -fsv "${PWD}/${TYPE}/.cargo/env" "${HOME}/.cargo/env"
 fi
 
+if [ -L "${HOME}/.asdfrc" ]; then
+  echo "skip link .asdfrc"
+else
+  echo "add symbolic link .asdfrc"
+  ln -fsv "${PWD}/${TYPE}/.asdfrc" "${HOME}/.asdfrc"
+fi
+
