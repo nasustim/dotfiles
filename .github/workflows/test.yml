@@ -1,7 +1,10 @@
-name: Test deployment
+name: Test
 
 on:
   pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
   on-macos:
