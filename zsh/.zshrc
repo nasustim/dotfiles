@@ -37,6 +37,11 @@ if type "anyenv" > /dev/null 2>&1; then
   eval "$(anyenv init -)"
 fi
 
+# asdf
+if type "asdf" > /dev/null 2>&1; then
+  . "$(brew --prefix asdf)/libexec/asdf.sh"
+fi
+
 # macOS
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # call buint-in apache
