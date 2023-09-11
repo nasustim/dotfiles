@@ -31,6 +31,8 @@ alias reload="source ~/.zshrc"
 alias "brew-bundle"="brew bundle dump --global --force"
 alias "brew-cleanup"="brew bundle cleanup --global --force"
 
+alias "flutter"="fvm flutter"
+
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 if type "anyenv" > /dev/null 2>&1; then
