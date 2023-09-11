@@ -17,3 +17,5 @@ else
   ln -fsv "${PWD}/${TYPE}/asdf/.asdfrc" "${HOME}/.asdfrc"
 fi
 
+ASDF_GOLANG_MOD_VERSION_ENABLED=true
+
