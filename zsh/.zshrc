@@ -31,7 +31,11 @@ alias reload="source ~/.zshrc"
 alias "brew-bundle"="brew bundle dump --global --force"
 alias "brew-cleanup"="brew bundle cleanup --global --force"
 
+# flutter
 alias "flutter"="fvm flutter"
+
+# git
+alias "git-cp"="git cherry-pick"
 
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
