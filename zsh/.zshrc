@@ -1,7 +1,6 @@
 is_fvm_dir () {
   local current_dir=$(pwd)
   while [[ "$current_dir" != "/" ]]; do
-    echo "$current_dir/.fvm/fvm_config.json"
     if [[ -e "$current_dir/.fvm/fvm_config.json" ]]; then
       return 0
     fi
