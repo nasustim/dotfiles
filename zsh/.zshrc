@@ -1,3 +1,15 @@
+is_fvm_dir () {
+  local current_dir=$(pwd)
+  while [[ "$current_dir" != "/" ]]; do
+    echo "$current_dir/.fvm/fvm_config.json"
+    if [[ -e "$current_dir/.fvm/fvm_config.json" ]]; then
+      return 0
+    fi
+    current_dir=$(dirname "$current_dir")
+  done
+  return 1
+}
+
 ## setup prompt stype
 setopt prompt_subst
 PROMPT='%F{green}[%n@%m%f %F{blue}%c%f%F{green}]%f$(__git_ps1 "(%s)") '
@@ -67,14 +79,14 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
-# flutter fvm
-if type "fvm" > /dev/null 2>&1; then
-  alias "flutter"="fvm flutter"
-fi
-
 # asdf
 if type "asdf" > /dev/null 2>&1; then
   . "$(brew --prefix asdf)/libexec/asdf.sh"
+fi
+
+# Generally I use `asdf flutter`, but any projects are using `fvm flutter`
+if type "fvm" > /dev/null 2>&1 && is_fvm_dir; then
+  alias "flutter"="fvm flutter"
 fi
 
 # flutter
