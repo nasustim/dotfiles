@@ -1,3 +1,10 @@
+## setup prompt stype
+setopt prompt_subst
+PROMPT='%F{green}[%n@%m%f %F{blue}%c%f%F{green}]%f$(__git_ps1 "(%s)") '
+
+# terminal settings
+export LSCOLORS=cxfxcxdxbxegedabagacad
+
 ## setup git-prompt
 ## ref: https://qiita.com/mikan3rd/items/d41a8ca26523f950ea9d#pencil-zshrc-%E3%81%AB%E8%A8%AD%E5%AE%9A%E8%BF%BD%E8%A8%98
 source ~/.zsh/git-prompt.sh
@@ -8,15 +15,10 @@ GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
-## setup prompt
-setopt prompt_subst
-PROMPT='%F{green}[%n@%m%f %F{blue}%c%f%F{green}]%f$(__git_ps1 "(%s)") '
 
 # get .gitignore
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
-# terminal settings
-export LSCOLORS=cxfxcxdxbxegedabagacad
 ## aliases
 alias lla="ls -la"
 alias ll="ls -l"
@@ -27,25 +29,15 @@ alias ls="ls -G"
 alias grep="grep -G"
 alias reload="source ~/.zshrc"
 
-# homebrew
-alias "brew-bundle"="brew bundle dump --global --force"
-alias "brew-cleanup"="brew bundle cleanup --global --force"
-
-# flutter
-alias "flutter"="fvm flutter"
-
 # git
-alias "git-cp"="git cherry-pick"
+if type "git" > /dev/null 2>&1; then
+  alias "git-cp"="git cherry-pick"
+fi
 
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 if type "anyenv" > /dev/null 2>&1; then
   eval "$(anyenv init -)"
-fi
-
-# asdf
-if type "asdf" > /dev/null 2>&1; then
-  . "$(brew --prefix asdf)/libexec/asdf.sh"
 fi
 
 # macOS
@@ -63,6 +55,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # open iOS Simulator
   alias ios="open -a Simulator"
+
+  # homebrew
+  alias "brew-bundle"="brew bundle dump --global --force"
+  alias "brew-cleanup"="brew bundle cleanup --global --force"
 fi
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -71,7 +67,17 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
-# add flutter fvm
+# flutter fvm
+if type "fvm" > /dev/null 2>&1; then
+  alias "flutter"="fvm flutter"
+fi
+
+# asdf
+if type "asdf" > /dev/null 2>&1; then
+  . "$(brew --prefix asdf)/libexec/asdf.sh"
+fi
+
+# flutter
 if [ -d "$HOME/.pub-cache/bin" ]; then
   export PATH="$PATH":"$HOME/.pub-cache/bin"
 fi
