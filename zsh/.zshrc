@@ -77,6 +77,12 @@ if type "asdf" > /dev/null 2>&1; then
   export PATH=$PATH:$GOPATH/bin
 fi
 
+# mise
+if type "mise" > /dev/null 2>&1; then
+  eval "$(mise activate zsh)"
+  export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+fi
+
 # flutter
 if [ -d "$HOME/.pub-cache/bin" ]; then
   export PATH="$PATH":"$HOME/.pub-cache/bin"
@@ -87,15 +93,17 @@ if type "ruby" > /dev/null 2>&1; then
   export GEM_HOME=$HOME/.gem
   export PATH=$GEM_HOME/bin:$PATH
 fi
-eval "$(mise activate zsh)"
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 # gloud
-source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+if type "gcloud" > /dev/null 2>&1; then
+  source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+  source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+fi
 
-## [Completion]
-## Completion scripts setup. Remove the following line to uninstall
-[[ -f /Users/mitsuhiro.hibino/.dart-cli-completion/zsh-config.zsh ]] && . /Users/mitsuhiro.hibino/.dart-cli-completion/zsh-config.zsh || true
-## [/Completion]
-
+# dart
+if type "dart" > /dev/null 2>&1; then
+  ## [Completion]
+  ## Completion scripts setup. Remove the following line to uninstall
+  [[ -f /Users/mitsuhiro.hibino/.dart-cli-completion/zsh-config.zsh ]] && . /Users/mitsuhiro.hibino/.dart-cli-completion/zsh-config.zsh || true
+  ## [/Completion]
+fi
