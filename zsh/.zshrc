@@ -46,6 +46,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   alias apache="sudo /usr/sbin/apachectl"
 
   # Visual Studio Code
+  export PATH="$PATH:/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
   export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
   # load zcompletion of homebrew packages
@@ -72,20 +73,19 @@ if type "asdf" > /dev/null 2>&1; then
   . "$(brew --prefix asdf)/libexec/asdf.sh"
   export ASDF_GOLANG_MOD_VERSION_ENABLED=true
   . ~/.asdf/plugins/java/set-java-home.zsh
+fi
 
+# golang
+if type "go" > /dev/null 2>&1; then
   export GOPATH=$(go env GOPATH)
   export PATH=$PATH:$GOPATH/bin
 fi
 
-# mise
-if type "mise" > /dev/null 2>&1; then
-  eval "$(mise activate zsh)"
-  export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-fi
-
-# flutter
-if [ -d "$HOME/.pub-cache/bin" ]; then
-  export PATH="$PATH":"$HOME/.pub-cache/bin"
+# nodejs
+if type "node" > /dev/null 2>&1; then
+  ### refer: https://zenn.dev/mizchi/articles/experimental-node-typescript
+  ### ToDo: remove it when execute TypeScript feature become generally available
+  alias nodets="node --experimental-strip-types --experimental-transform-types --experimental-detect-module --no-warnings=ExperimentalWarning"
 fi
 
 # ruby
@@ -100,10 +100,17 @@ if type "gcloud" > /dev/null 2>&1; then
   source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 fi
 
-# dart
-if type "dart" > /dev/null 2>&1; then
+# flutter (+ dart)
+if type "flutter" > /dev/null 2>&1; then
   ## [Completion]
   ## Completion scripts setup. Remove the following line to uninstall
   [[ -f /Users/mitsuhiro.hibino/.dart-cli-completion/zsh-config.zsh ]] && . /Users/mitsuhiro.hibino/.dart-cli-completion/zsh-config.zsh || true
   ## [/Completion]
+
+  export PATH="$PATH":"$HOME/.pub-cache/bin"
+fi
+
+# java
+if [ -d "/Applications/Android\ Studio.app/Contents/jbr/Contents/Home" ]; then
+  export JAVA_HOME="/Applications/Android\ Studio.app/Contents/jbr/Contents/Home"
 fi
