@@ -34,12 +34,6 @@ if type "git" > /dev/null 2>&1; then
   alias "git-cp"="git cherry-pick"
 fi
 
-# anyenv
-export PATH="$HOME/.anyenv/bin:$PATH"
-if type "anyenv" > /dev/null 2>&1; then
-  eval "$(anyenv init -)"
-fi
-
 # macOS
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # call buint-in apache
