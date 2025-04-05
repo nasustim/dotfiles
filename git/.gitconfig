@@ -5,3 +5,6 @@
 # 個人メールアドレスでコミットしたくないリポジトリは~/project以下に置く
 [includeIf "gitdir:~/project/**"]
   path = ~/.gitconfig_formal
+
+[credential]
+	helper = manager-core
