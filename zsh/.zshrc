@@ -66,7 +66,11 @@ if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-clou
 if type "asdf" > /dev/null 2>&1; then
   . "$(brew --prefix asdf)/libexec/asdf.sh"
   export ASDF_GOLANG_MOD_VERSION_ENABLED=true
-  . ~/.asdf/plugins/java/set-java-home.zsh
+
+  # java plugin
+  if asdf plugin list | grep -q "^java$"; then
+    . ~/.asdf/plugins/java/set-java-home.zsh
+  fi
 fi
 
 # golang
@@ -107,4 +111,9 @@ fi
 # java
 if [ -d "/Applications/Android\ Studio.app/Contents/jbr/Contents/Home" ]; then
   export JAVA_HOME="/Applications/Android\ Studio.app/Contents/jbr/Contents/Home"
+  export ANDROID_HOME=$HOME/Library/Android/sdk
+  export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 fi
+
+# cursor
+alias cs=cursor
