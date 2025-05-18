@@ -28,6 +28,7 @@ alias rm="rm -i"
 alias ls="ls -G"
 alias grep="grep -G"
 alias reload="source ~/.zshrc"
+alias cs=cursor
 
 # git
 if type "git" > /dev/null 2>&1; then
@@ -115,5 +116,9 @@ if [ -d "/Applications/Android\ Studio.app/Contents/jbr/Contents/Home" ]; then
   export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 fi
 
-# cursor
-alias cs=cursor
+# bun completions
+if [ -s "$HOME/.bun/_bun" ]; then
+  source "$HOME/.bun/_bun"
+  export BUN_INSTALL="$HOME/.bun"
+  export PATH="$BUN_INSTALL/bin:$PATH"
+fi
