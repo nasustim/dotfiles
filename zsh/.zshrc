@@ -29,6 +29,7 @@ alias ls="ls -G"
 alias grep="grep -G"
 alias reload="source ~/.zshrc"
 alias cs=cursor
+alias ccusage="npx ccusage@latest"
 
 # git
 if type "git" > /dev/null 2>&1; then
@@ -116,4 +117,3 @@ if [ -s "$HOME/.bun/_bun" ]; then
   export BUN_INSTALL="$HOME/.bun"
   export PATH="$BUN_INSTALL/bin:$PATH"
 fi
- 
