@@ -1,8 +1,8 @@
-.PHONY: all vim tmux git zsh misc clean
+.PHONY: all vim tmux git zsh misc clean claude
 
 PWD = $(shell pwd)
 
-all: vim tmux git zsh misc
+all: vim tmux git zsh misc claude
 
 vim:
 	sh vim/setup.sh
@@ -19,6 +19,9 @@ zsh:
 misc:
 	sh misc/setup.sh
 
+claude:
+	sh claude/setup.sh
+
 clean:
 	unlink "${HOME}/.zshrc"
 	unlink "${HOME}/.zshenv"
@@ -26,3 +29,5 @@ clean:
 	unlink "${HOME}/.tmux.conf"
 	unlink "${HOME}/.gitignore_global"
 	unlink "${HOME}/.cargo/env"
+	unlink "${HOME}/.config/claude/settings.json"
+	unlink "${HOME}/.config/claude/CLAUDE.md"
