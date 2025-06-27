@@ -35,6 +35,11 @@ if type "git" > /dev/null 2>&1; then
   alias "git-cp"="git cherry-pick"
 fi
 
+# mise
+if type "mise" > /dev/null 2>&1; then
+  eval "$(mise activate zsh)"
+fi
+
 # macOS
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # call buint-in apache
@@ -62,17 +67,6 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
-
-# asdf
-if type "asdf" > /dev/null 2>&1; then
-  . "$(brew --prefix asdf)/libexec/asdf.sh"
-  export ASDF_GOLANG_MOD_VERSION_ENABLED=true
-
-  # java plugin
-  if asdf plugin list | grep -q "^java$"; then
-    . ~/.asdf/plugins/java/set-java-home.zsh
-  fi
-fi
 
 # golang
 if type "go" > /dev/null 2>&1; then
@@ -122,3 +116,4 @@ if [ -s "$HOME/.bun/_bun" ]; then
   export BUN_INSTALL="$HOME/.bun"
   export PATH="$BUN_INSTALL/bin:$PATH"
 fi
+
