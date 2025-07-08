@@ -34,6 +34,19 @@ alias ccusage="npx ccusage@latest"
 # git
 if type "git" > /dev/null 2>&1; then
   alias "git-cp"="git cherry-pick"
+
+  git-wt() {
+    branch=""
+    if [ "$1" = "-b" ]; then
+      branch="$2"
+      git worktree add "$HOME/worktrees/$branch" -b "$branch"
+    else
+      branch="$1"
+      git worktree add "$HOME/worktrees/$branch" "$branch"
+    fi
+
+    echo "✨ new worktree created at $HOME/worktrees/$branch"
+  }
 fi
 
 # mise
