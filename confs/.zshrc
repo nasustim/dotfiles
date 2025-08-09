@@ -7,6 +7,18 @@ export LSCOLORS=cxfxcxdxbxegedabagacad
 
 ## setup git-prompt
 ## ref: https://qiita.com/mikan3rd/items/d41a8ca26523f950ea9d#pencil-zshrc-%E3%81%AB%E8%A8%AD%E5%AE%9A%E8%BF%BD%E8%A8%98
+if [ ! -d "$HOME/.zsh" ]; then
+  mkdir -p "$HOME/.zsh"
+fi
+if [ ! -f "$HOME/.zsh/git-prompt.sh" ]; then
+  curl -o "$HOME/.zsh/git-prompt.sh" https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+fi
+if [ ! -f "$HOME/.zsh/git-completion.bash" ]; then
+  curl -o "$HOME/.zsh/git-completion.bash" https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+fi
+if [ ! -f "$HOME/.zsh/_git" ]; then
+  curl -o "$HOME/.zsh/_git" https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
+fi
 source ~/.zsh/git-prompt.sh
 fpath=(~/.zsh $fpath)
 zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
@@ -110,7 +122,7 @@ fi
 if type "flutter" > /dev/null 2>&1; then
   ## [Completion]
   ## Completion scripts setup. Remove the following line to uninstall
-  [[ -f /Users/mitsuhiro.hibino/.dart-cli-completion/zsh-config.zsh ]] && . /Users/mitsuhiro.hibino/.dart-cli-completion/zsh-config.zsh || true
+  [[ -f "$HOME/.dart-cli-completion/zsh-config.zsh" ]] && . "$HOME/.dart-cli-completion/zsh-config.zsh" || true
   ## [/Completion]
 
   export PATH="$PATH":"$HOME/.pub-cache/bin"
