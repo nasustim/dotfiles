@@ -2,10 +2,6 @@
 
 My configuration files
 
-## Dependencies
-
-- [yq](https://github.com/mikefarah/yq)
-
 ## Usage
 
 ### Deploy configuration files
