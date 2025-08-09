@@ -16,17 +16,11 @@ if ! command -v yq >/dev/null 2>&1; then
     exit 1
 fi
 
-# Function to expand environment variables
-expand_path() {
-    local path="$1"
-    echo "$path" | sed "s/\${HOME}/$HOME/g"
-}
-
 # Parse links from YAML and create symbolic links
 yq eval '.links[] | .source + ":" + .destination' "$LINKS_CONFIG" | while IFS=: read -r source dest; do
     # Resolve absolute paths
     abs_source="$REPO_ROOT/$source"
-    abs_dest=$(expand_path "$dest")
+    abs_dest="$HOME/$dest"
     
     # Check if source exists
     if [ ! -e "$abs_source" ]; then
@@ -59,7 +53,7 @@ yq eval '.links[] | .source + ":" + .destination' "$LINKS_CONFIG" | while IFS=: 
     fi
     
     # Create the symbolic link
-    ln -s "$abs_source" "$abs_dest"
+    ln -fsv "$abs_source" "$abs_dest"
     echo "Created symlink: $abs_dest -> $abs_source"
 done
 

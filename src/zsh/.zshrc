@@ -29,7 +29,6 @@ alias ls="ls -G"
 alias grep="grep -G"
 alias reload="source ~/.zshrc"
 alias cs=cursor
-alias claude="npx @anthropic-ai/claude-code@latest --dangerously-skip-permissions"
 alias ccusage="npx ccusage@latest"
 
 # git
