@@ -6,6 +6,8 @@ export GOPATH="$HOME/go"
 ## nodejs
 export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
 ## rust binary
-. "$HOME/.cargo/env"
+if [ -f "$HOME/.cargo/env" ]; then
+  . "$HOME/.cargo/env"
+fi
 ## golang binary
 export PATH="$PATH:$GOPATH/bin"
