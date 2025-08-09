@@ -16,3 +16,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3.5.3
       - run: make
+      - run: make clean
