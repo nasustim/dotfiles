@@ -7,18 +7,18 @@ links:
     destination: .vimrc
 
   # tmux configuration  
-  - source: confs/tmux/.tmux.conf
-    destination: .tmux.conf
+  - source: confs/.config/tmux/tmux.conf
+    destination: .config/tmux/tmux.conf
 
   # git configuration
-  - source: confs/git/.config/git/ignore
+  - source: confs/.config/git/ignore
     destination: .config/git/ignore
 
-  - source: confs/git/.gitconfig
-    destination: .gitconfig
+  - source: confs/.config/git/config
+    destination: .config/git/config
 
-  - source: confs/git/.gitconfig_alt
-    destination: .gitconfig_alt
+  - source: confs/.config/git/config_alt
+    destination: .config/git/config_alt
 
   # zsh configuration
   - source: confs/zsh/.zsh

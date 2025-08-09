@@ -4,7 +4,7 @@
 
 # Apply alternative configuration in project dir
 [includeIf "gitdir:~/project/**"]
-  path = ~/.gitconfig_alt
+  path = ~/.config/git/config_alt
 [credential]
 	helper = manager-core
 [fetch]
