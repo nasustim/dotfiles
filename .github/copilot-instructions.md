@@ -48,11 +48,10 @@ make clean
 
 ```
 ├── .github/workflows/     # CI/CD workflows (test.yml, test-workflows.yml)
-├── confs/                 # Configuration files to be symlinked
+├── confs/                 # Configuration files automatically symlinked to user's home directory
 │   ├── .config/git/       # Git configuration (config, ignore, config_alt, config_alt.example)
 │   ├── .config/mise/      # Mise version manager configuration (replaces asdf)
 │   ├── .config/tmux/      # Tmux configuration following XDG standards
-│   ├── claude/.claude/    # Claude Code configuration (settings.json)
 │   ├── vim/               # Vim configuration (.vimrc)
 │   └── zsh/               # Zsh configuration (.zshenv, .zshrc) with git prompt integration
 ├── lib/                   # Core scripts and configuration
@@ -119,7 +118,6 @@ Warning: Source file does not exist: /path/to/dotfiles/confs/zsh/.zsh
 - **Vim**: Basic editor settings (line numbers, syntax highlighting, smart indent)
 - **Git**: Multiple identity configurations with project-specific includes
 - **Zsh**: Shell environment with homebrew integration, git prompt, and completions
-- **Claude**: Claude Code integration with permissions and environment settings
 - **Mise**: Version manager for Node.js and development tools (replaces asdf)
 - **Tmux**: Terminal multiplexer configuration following XDG standards
 
@@ -130,7 +128,6 @@ Warning: Source file does not exist: /path/to/dotfiles/confs/zsh/.zsh
 - `ignore` - Global gitignore patterns (replaces `.gitignore_global`)
 
 **Claude Code integration:**
-- `confs/claude/.claude/settings.json` - Permissions and environment settings
 - `CLAUDE.md` - Development principles and repository-specific guidance
 - Core principle: Implement changes without breaking existing tests or linters
 
@@ -153,7 +150,7 @@ Warning: Source file does not exist: /path/to/dotfiles/confs/zsh/.zsh
 find ~ -type l -exec test ! -e {} \; -print 2>/dev/null | grep -E "\.(vimrc|zshrc|config)" || echo "No broken dotfile symlinks"
 
 # View current symlink status
-ls -la ~/.vimrc ~/.zshrc ~/.config/git/config ~/.claude/settings.json
+ls -la ~/.vimrc ~/.zshrc ~/.config/git/config
 ```
 
 ## Claude Code Integration
@@ -161,7 +158,6 @@ ls -la ~/.vimrc ~/.zshrc ~/.config/git/config ~/.claude/settings.json
 **Repository includes specialized Claude Code support:**
 
 **Configuration files:**
-- `confs/claude/.claude/settings.json` - Claude Code permissions and environment settings
 - `CLAUDE.md` - Repository-specific guidance for Claude Code development
 
 **Development principles for Claude Code:**
@@ -170,16 +166,11 @@ ls -la ~/.vimrc ~/.zshrc ~/.config/git/config ~/.claude/settings.json
 - Follow XDG Base Directory standards where applicable
 - Maintain compatibility with the minimal, fast-executing setup (< 2 seconds total)
 
-**Claude-specific configurations managed:**
-- Permissions for file system access
-- Environment settings for development workflow
-- Integration with the symbolic link management system
-
 **When working with Claude Code:**
 1. Reference `CLAUDE.md` for repository-specific development guidance
 2. Ensure changes align with the centralized configuration management approach
 3. Test all changes with the standard `make clean && make` workflow
-4. Validate that symbolic links are created correctly for Claude configurations
+4. Validate that symbolic links are created correctly for managed configurations
 
 ## CI/CD Pipeline
 
