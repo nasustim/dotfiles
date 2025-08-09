@@ -5,22 +5,22 @@ PWD = $(shell pwd)
 all: vim tmux git zsh misc claude
 
 vim:
-	sh vim/setup.sh
+	sh src/vim/setup.sh
 
 tmux:
-	sh tmux/setup.sh
+	sh src/tmux/setup.sh
 
 git:
-	sh git/setup.sh
+	sh src/git/setup.sh
 
 zsh:
-	sh zsh/setup.sh
+	sh src/zsh/setup.sh
 
 misc:
-	sh misc/setup.sh
+	sh src/misc/setup.sh
 
 claude:
-	sh claude/setup.sh
+	sh src/claude/setup.sh
 
 clean:
 	unlink "${HOME}/.zshrc"
