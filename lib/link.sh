@@ -2,31 +2,34 @@
 
 SCRIPT_DIR="$(dirname "$0")"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-LINKS_CONFIG="$SCRIPT_DIR/links.yml"
+CONFS_DIR="$REPO_ROOT/confs"
 
-if [ ! -f "$LINKS_CONFIG" ]; then
-    echo "Error: Links configuration file not found: $LINKS_CONFIG"
+if [ ! -d "$CONFS_DIR" ]; then
+    echo "Error: Configuration directory not found: $CONFS_DIR"
     exit 1
 fi
 
-# Check if yq is installed
-if ! command -v yq >/dev/null 2>&1; then
-    echo "Error: yq is required but not installed"
-    echo "Install with: brew install yq"
-    exit 1
+# preparation
+if [ ! -f "$CONFS_DIR/.config/git/config_alt" ]; then
+    echo "config_alt is not copied yet. so automatically copying it."
+    cp "$CONFS_DIR/.config/git/config_alt.example" "$CONFS_DIR/.config/git/config_alt"
 fi
 
-# Parse links from YAML and create symbolic links
-yq eval '.links[] | .source + ":" + .destination' "$LINKS_CONFIG" | while IFS=: read -r source dest; do
-    # Resolve absolute paths
-    abs_source="$REPO_ROOT/$source"
-    abs_dest="$HOME/$dest"
+# Find all files in confs directory and create symbolic links
+find "$CONFS_DIR" -type f | while read -r abs_source; do
+    # Get relative path from confs directory
+    relative_path="${abs_source#$CONFS_DIR/}"
     
-    # Check if source exists
-    if [ ! -e "$abs_source" ]; then
-        echo "Warning: Source file does not exist: $abs_source"
-        continue
-    fi
+    # Skip special files
+    case "$relative_path" in
+        *.example|*/.gitkeep)
+            echo "Skipping: $relative_path"
+            continue
+            ;;
+    esac
+    
+    # Destination path in home directory
+    abs_dest="$HOME/$relative_path"
     
     # Create destination directory if it doesn't exist
     dest_dir=$(dirname "$abs_dest")

@@ -82,3 +82,6 @@ $RECYCLE.BIN/
 .nfs*
 
 # End of https://www.toptal.com/developers/gitignore/api/linux
+
+# Claude Code
+**/.claude/settings.local.json

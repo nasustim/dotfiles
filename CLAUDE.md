@@ -13,8 +13,8 @@ This is a dotfiles repository that manages shell configurations and development 
 
 This is a centralized dotfiles repository with the following structure:
 
-- **Centralized Link Management**: Uses YAML configuration (`lib/links.yml`) to define all symbolic links
-- **Shell Script Automation**: `lib/link.sh` and `lib/unlink.sh` handle all linking/unlinking operations
+- **Automatic Link Management**: Automatically discovers and links all configuration files in `confs/` directory
+- **Shell Script Automation**: `lib/link.sh` and `lib/unlink.sh` handle all linking/unlinking operations automatically
 - **XDG Base Directory Compliance**: Most configurations follow XDG standards in `.config/` directories
 - **Simple Makefile**: Minimal orchestration with just `all` and `clean` targets
 
@@ -26,19 +26,21 @@ This is a centralized dotfiles repository with the following structure:
 - `confs/zsh/` - Zsh configuration with git prompt and completion integration
 - `confs/.config/mise/` - Mise version manager configuration (replaces asdf)
 - `confs/claude/` - Claude Code settings and configuration
-- `lib/` - Centralized linking scripts and YAML configuration
+- `lib/` - Automatic linking scripts
 
 ### Configuration Management
 
-All configurations are managed through `lib/links.yml` which defines:
-1. Source file locations in the `confs/` directory
-2. Target destinations in the home directory
-3. Automatic creation of necessary parent directories
+All configurations are managed automatically by discovering files in the `confs/` directory:
+1. All files in `confs/` are automatically discovered and linked
+2. Directory structure is preserved when creating symlinks in home directory  
+3. Special files like `.gitkeep` and `.example` files are automatically skipped
+4. Parent directories are created automatically as needed
 
 The linking system:
-- Creates symbolic links from repository files to home directory locations
+- Automatically creates symbolic links from all files in `confs/` to corresponding locations in home directory
 - Supports XDG Base Directory structure (`.config/`, etc.)
 - Handles complex directory structures automatically
+- No manual configuration required - just add files to `confs/` directory
 
 ### Git Configuration Notes
 
