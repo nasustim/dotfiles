@@ -6,48 +6,50 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a dotfiles repository that manages shell configurations and development environment setup:
 
-- `make` - Install all dotfiles configurations (runs all setup scripts)
-- `make vim` - Install vim configuration only
-- `make tmux` - Install tmux configuration only  
-- `make git` - Install git configuration only
-- `make zsh` - Install zsh configuration only
-- `make misc` - Install miscellaneous configurations (cargo, asdf)
-- `make claude` - Install Claude Code configurations only
-- `make clean` - Remove all symbolic links created by setup scripts
+- `make` or `make all` - Install all dotfiles configurations (creates all symbolic links)
+- `make clean` - Remove all symbolic links created by the setup
 
 ## Repository Architecture
 
-This is a modular dotfiles repository with the following structure:
+This is a centralized dotfiles repository with the following structure:
 
-- **Modular Setup**: Each tool/application has its own directory with a `setup.sh` script
-- **Symbolic Linking**: Setup scripts create symbolic links from the repo to home directory locations
-- **Makefile Orchestration**: The root Makefile coordinates running individual setup scripts
-- **Safe Installation**: Setup scripts check for existing links before creating new ones
+- **Centralized Link Management**: Uses YAML configuration (`lib/links.yml`) to define all symbolic links
+- **Shell Script Automation**: `lib/link.sh` and `lib/unlink.sh` handle all linking/unlinking operations
+- **XDG Base Directory Compliance**: Most configurations follow XDG standards in `.config/` directories
+- **Simple Makefile**: Minimal orchestration with just `all` and `clean` targets
 
 ### Directory Organization
 
-- `vim/` - Vim configuration and setup
-- `tmux/` - Tmux configuration and setup  
-- `git/` - Git configuration including global gitignore and formal/personal configs
-- `zsh/` - Zsh configuration with git prompt integration
-- `misc/` - Miscellaneous configs (Cargo, asdf version manager)
-- `claude/` - Claude Code settings and configuration
+- `confs/vim/` - Vim configuration (.vimrc)
+- `confs/.config/tmux/` - Tmux configuration following XDG standards
+- `confs/.config/git/` - Git configuration including ignore patterns and multiple git identities
+- `confs/zsh/` - Zsh configuration with git prompt and completion integration
+- `confs/.config/mise/` - Mise version manager configuration (replaces asdf)
+- `confs/claude/` - Claude Code settings and configuration
+- `lib/` - Centralized linking scripts and YAML configuration
 
-### Setup Script Pattern
+### Configuration Management
 
-All setup scripts follow a consistent pattern:
-1. Check if symbolic link already exists
-2. Create symbolic link if it doesn't exist
-3. Handle special cases (like downloading git completion scripts for zsh)
+All configurations are managed through `lib/links.yml` which defines:
+1. Source file locations in the `confs/` directory
+2. Target destinations in the home directory
+3. Automatic creation of necessary parent directories
+
+The linking system:
+- Creates symbolic links from repository files to home directory locations
+- Supports XDG Base Directory structure (`.config/`, etc.)
+- Handles complex directory structures automatically
 
 ### Git Configuration Notes
 
-The git setup includes both personal and formal configurations:
-- `.gitconfig_formal.example` is copied to `.gitconfig_formal` if it doesn't exist
-- Users need to edit `.gitconfig_formal` for their formal git identity
+The git setup includes multiple identity configurations:
+- `config` - Primary git configuration
+- `config_alt` - Alternative git identity configuration  
+- `config_alt.example` - Template for alternative configuration
+- `ignore` - Global gitignore patterns (replaces `.gitignore_global`)
 
 ### Claude Code Integration
 
-The repository includes Claude Code configuration files in `claude/.claude/`:
+The repository includes Claude Code configuration files in `confs/claude/.claude/`:
 - `settings.json` - Permissions and environment settings
 - `CLAUDE.md` - Core development principles (implement without breaking tests/linters)

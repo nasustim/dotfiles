@@ -8,8 +8,8 @@
       "Bash(npm run lint)",
       "Bash(npm run test:*)",
       "Bash(git:*)",
-      "Read(./src/**)",
-      "Edit(./src/**)"
+      "Read(./confs/**)",
+      "Edit(./confs/**)"
     ],
     "deny": [
       "Bash(curl:*)",

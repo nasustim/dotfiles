@@ -81,5 +81,5 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/windows
 
-zsh/.zsh
-git/.gitconfig_formal
+confs/zsh/.zsh
+confs/git/.gitconfig_formal
