@@ -49,17 +49,18 @@ make clean
 ```
 ├── .github/workflows/     # CI/CD workflows (test.yml, test-workflows.yml)
 ├── confs/                 # Configuration files to be symlinked
-│   ├── .config/git/       # Git configuration (config, ignore, config_alt)
-│   ├── .config/mise/      # Mise version manager configuration
-│   ├── .config/tmux/      # Tmux configuration
-│   ├── claude/.claude/    # Claude Code configuration
+│   ├── .config/git/       # Git configuration (config, ignore, config_alt, config_alt.example)
+│   ├── .config/mise/      # Mise version manager configuration (replaces asdf)
+│   ├── .config/tmux/      # Tmux configuration following XDG standards
+│   ├── claude/.claude/    # Claude Code configuration (settings.json)
 │   ├── vim/               # Vim configuration (.vimrc)
-│   └── zsh/               # Zsh configuration (.zshenv, .zshrc)
+│   └── zsh/               # Zsh configuration (.zshenv, .zshrc) with git prompt integration
 ├── lib/                   # Core scripts and configuration
 │   ├── links.yml          # YAML configuration defining all symlinks
 │   ├── link.sh           # Script to create symlinks
 │   └── unlink.sh         # Script to remove symlinks
 ├── Makefile              # Simple build targets (all, clean)
+├── CLAUDE.md             # Claude Code specific guidance and development principles
 └── README.md             # Basic installation instructions
 ```
 
@@ -116,15 +117,22 @@ Warning: Source file does not exist: /path/to/dotfiles/confs/zsh/.zsh
 
 **Managed configurations:**
 - **Vim**: Basic editor settings (line numbers, syntax highlighting, smart indent)
-- **Git**: User identity, credential helper, includes for project-specific configs
-- **Zsh**: Shell environment with homebrew integration and completions
-- **Claude**: Development environment settings and permissions
-- **Mise**: Version manager for Node.js and development tools
+- **Git**: Multiple identity configurations with project-specific includes
+- **Zsh**: Shell environment with homebrew integration, git prompt, and completions
+- **Claude**: Claude Code integration with permissions and environment settings
+- **Mise**: Version manager for Node.js and development tools (replaces asdf)
+- **Tmux**: Terminal multiplexer configuration following XDG standards
 
 **Git configuration features:**
-- Primary identity in `config`
-- Alternative identity support via `config_alt` for specific project directories
-- Global ignore patterns in `ignore`
+- `config` - Primary git identity configuration
+- `config_alt` - Alternative git identity for specific projects
+- `config_alt.example` - Template for alternative configuration setup
+- `ignore` - Global gitignore patterns (replaces `.gitignore_global`)
+
+**Claude Code integration:**
+- `confs/claude/.claude/settings.json` - Permissions and environment settings
+- `CLAUDE.md` - Development principles and repository-specific guidance
+- Core principle: Implement changes without breaking existing tests or linters
 
 ## Common Development Tasks
 
@@ -147,6 +155,31 @@ find ~ -type l -exec test ! -e {} \; -print 2>/dev/null | grep -E "\.(vimrc|zshr
 # View current symlink status
 ls -la ~/.vimrc ~/.zshrc ~/.config/git/config ~/.claude/settings.json
 ```
+
+## Claude Code Integration
+
+**Repository includes specialized Claude Code support:**
+
+**Configuration files:**
+- `confs/claude/.claude/settings.json` - Claude Code permissions and environment settings
+- `CLAUDE.md` - Repository-specific guidance for Claude Code development
+
+**Development principles for Claude Code:**
+- Implement changes without breaking existing tests or linters
+- Use centralized link management system for all configurations
+- Follow XDG Base Directory standards where applicable
+- Maintain compatibility with the minimal, fast-executing setup (< 2 seconds total)
+
+**Claude-specific configurations managed:**
+- Permissions for file system access
+- Environment settings for development workflow
+- Integration with the symbolic link management system
+
+**When working with Claude Code:**
+1. Reference `CLAUDE.md` for repository-specific development guidance
+2. Ensure changes align with the centralized configuration management approach
+3. Test all changes with the standard `make clean && make` workflow
+4. Validate that symbolic links are created correctly for Claude configurations
 
 ## CI/CD Pipeline
 
