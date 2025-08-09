@@ -1,7 +1,7 @@
 .PHONY: all
 
 all:
-	sh src/link.sh
+	sh lib/link.sh
 
 clean:
-	sh src/unlink.sh
+	sh lib/unlink.sh
