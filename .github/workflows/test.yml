@@ -11,12 +11,23 @@ jobs:
     timeout-minutes: 30
     strategy:
       matrix:
-        os: [macos-latest]
+        os: [macos-latest, ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3.5.3
+      
+      - name: Install yq on Ubuntu
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+          sudo chmod +x /usr/local/bin/yq
+          
       - name: Test link and unlink functionality
         run: |
+          # First run our comprehensive test script
+          ./test_link_unlink.sh
+          
+          # Then test the actual workflow
           # Test linking
           make
           
@@ -37,4 +48,4 @@ jobs:
             exit 1
           fi
           
-          echo "Link/unlink test passed successfully"
+          echo "All tests passed successfully"
