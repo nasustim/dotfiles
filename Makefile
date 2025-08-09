@@ -5,31 +5,22 @@ PWD = $(shell pwd)
 all: vim tmux git zsh misc claude
 
 vim:
-	sh src/vim/setup.sh
+	cd $(PWD) && . lib/link_utils.sh && setup_module vim
 
 tmux:
-	sh src/tmux/setup.sh
+	cd $(PWD) && . lib/link_utils.sh && setup_module tmux
 
 git:
-	sh src/git/setup.sh
+	cd $(PWD) && . lib/link_utils.sh && setup_module git
 
 zsh:
-	sh src/zsh/setup.sh
+	cd $(PWD) && . lib/link_utils.sh && setup_module zsh
 
 misc:
-	sh src/misc/setup.sh
+	cd $(PWD) && . lib/link_utils.sh && setup_module misc
 
 claude:
-	sh src/claude/setup.sh
+	cd $(PWD) && . lib/link_utils.sh && setup_module claude
 
 clean:
-	unlink "${HOME}/.zshrc"
-	unlink "${HOME}/.zshenv"
-	unlink "${HOME}/.vimrc"
-	unlink "${HOME}/.tmux.conf"
-	unlink "$(HOME)/.gitconfig"
-	unlink "$(HOME)/.gitconfig_alt"
-	unlink "${HOME}/.gitignore_global"
-	unlink "${HOME}/.cargo/env"
-	unlink "${HOME}/.claude/settings.json"
-	unlink "${HOME}/.claude/CLAUDE.md"
+	sh lib/clean.sh
