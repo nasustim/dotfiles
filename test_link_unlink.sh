@@ -2,6 +2,7 @@
 
 # Test script for link/unlink functionality
 # This script verifies that the dotfiles linking and unlinking works correctly
+# Updated for file discovery approach (no longer uses YAML/yq)
 
 set -e
 
@@ -35,38 +36,33 @@ fi
 
 echo "✓ Test 1 passed"
 
-# Test 2: Error handling - missing links.yml
-echo "Test 2: Error handling - missing links.yml"
-mv lib/links.yml lib/links.yml.backup
+# Test 2: Error handling - missing confs directory
+echo "Test 2: Error handling - missing confs directory"
+mv confs confs.backup
 
 if HOME="$TEST_HOME" sh lib/unlink.sh 2>/dev/null; then
-    echo "Error: unlink.sh should have failed when links.yml is missing"
-    mv lib/links.yml.backup lib/links.yml
+    echo "Error: unlink.sh should have failed when confs directory is missing"
+    mv confs.backup confs
     exit 1
 fi
 
-mv lib/links.yml.backup lib/links.yml
+mv confs.backup confs
 echo "✓ Test 2 passed"
 
-# Test 3: Error handling - yq not available
-echo "Test 3: Error handling - yq not available"
-# Create a fake yq that fails
-mkdir -p /tmp/fake_bin
-cat > /tmp/fake_bin/yq << 'EOF'
-#!/bin/sh
-echo "yq: command not found" >&2
-exit 127
-EOF
-chmod +x /tmp/fake_bin/yq
+# Test 3: Error handling - missing confs directory for link.sh
+echo "Test 3: Error handling - missing confs directory for link.sh"
+mv confs confs.backup
 
-if PATH="/tmp/fake_bin:/bin:/usr/bin" HOME="$TEST_HOME" sh lib/unlink.sh 2>/dev/null; then
-    echo "Error: unlink.sh should have failed when yq is not available"
+if HOME="$TEST_HOME" sh lib/link.sh 2>/dev/null; then
+    echo "Error: link.sh should have failed when confs directory is missing"
+    mv confs.backup confs
     exit 1
 fi
 
+mv confs.backup confs
 echo "✓ Test 3 passed"
 
 # Cleanup
-rm -rf "$TEST_HOME" /tmp/fake_bin
+rm -rf "$TEST_HOME"
 
-echo "All tests passed! unlink.sh works correctly."
+echo "All tests passed! link/unlink functionality works correctly with file discovery."

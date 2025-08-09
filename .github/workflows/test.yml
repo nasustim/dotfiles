@@ -15,12 +15,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3.5.3
-      
-      - name: Install yq on Ubuntu
-        if: matrix.os == 'ubuntu-latest'
-        run: |
-          sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
-          sudo chmod +x /usr/local/bin/yq
           
       - name: Test link and unlink functionality
         run: |
