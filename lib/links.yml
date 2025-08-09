@@ -3,43 +3,43 @@
 
 links:
   # vim configuration
-  - source: src/vim/.vimrc
+  - source: confs/vim/.vimrc
     destination: .vimrc
 
   # tmux configuration  
-  - source: src/tmux/.tmux.conf
+  - source: confs/tmux/.tmux.conf
     destination: .tmux.conf
 
   # git configuration
-  - source: src/git/.gitignore_global
+  - source: confs/git/.gitignore_global
     destination: .gitignore_global
 
-  - source: src/git/.gitconfig
+  - source: confs/git/.gitconfig
     destination: .gitconfig
 
-  - source: src/git/.gitconfig_alt
+  - source: confs/git/.gitconfig_alt
     destination: .gitconfig_alt
 
   # zsh configuration
-  - source: src/zsh/.zsh
+  - source: confs/zsh/.zsh
     destination: .zsh
 
-  - source: src/zsh/.zshenv
+  - source: confs/zsh/.zshenv
     destination: .zshenv
 
-  - source: src/zsh/.zshrc
+  - source: confs/zsh/.zshrc
     destination: .zshrc
 
   # misc configuration
-  - source: src/misc/.cargo/env
+  - source: confs/misc/.cargo/env
     destination: .cargo/env
 
-  - source: src/misc/asdf/.asdfrc
+  - source: confs/misc/asdf/.asdfrc
     destination: .asdfrc
 
   # claude configuration
-  - source: src/claude/.claude/CLAUDE.md
+  - source: confs/claude/.claude/CLAUDE.md
     destination: .claude/CLAUDE.md
 
-  - source: src/claude/.claude/settings.json
+  - source: confs/claude/.claude/settings.json
     destination: .claude/settings.json

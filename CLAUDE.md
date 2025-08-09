@@ -26,12 +26,12 @@ This is a modular dotfiles repository with the following structure:
 
 ### Directory Organization
 
-- `src/vim/` - Vim configuration and setup
-- `src/tmux/` - Tmux configuration and setup  
-- `src/git/` - Git configuration including global gitignore and formal/personal configs
-- `src/zsh/` - Zsh configuration with git prompt integration
-- `src/misc/` - Miscellaneous configs (Cargo, asdf version manager)
-- `src/claude/` - Claude Code settings and configuration
+- `confs/vim/` - Vim configuration and setup
+- `confs/tmux/` - Tmux configuration and setup  
+- `confs/git/` - Git configuration including global gitignore and formal/personal configs
+- `confs/zsh/` - Zsh configuration with git prompt integration
+- `confs/misc/` - Miscellaneous configs (Cargo, asdf version manager)
+- `confs/claude/` - Claude Code settings and configuration
 
 ### Setup Script Pattern
 
@@ -48,6 +48,6 @@ The git setup includes both personal and formal configurations:
 
 ### Claude Code Integration
 
-The repository includes Claude Code configuration files in `src/claude/.claude/`:
+The repository includes Claude Code configuration files in `confs/claude/.claude/`:
 - `settings.json` - Permissions and environment settings
 - `CLAUDE.md` - Core development principles (implement without breaking tests/linters)
