@@ -7,9 +7,7 @@
     "allow": [
       "Bash(npm run lint)",
       "Bash(npm run test:*)",
-      "Bash(git:*)",
-      "Read(./confs/**)",
-      "Edit(./confs/**)"
+      "Bash(git:*)"
     ],
     "deny": [
       "Bash(curl:*)",
@@ -17,7 +15,6 @@
       "Bash(git push:*)",
       "Bash(git reset:*)",
       "Bash(git rebase:*)",
-      "WebFetch(domain:*)",
       "Read(.env.*)",
       "Read(**/secrets/**)"
     ],
