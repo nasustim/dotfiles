@@ -16,6 +16,12 @@ if ! command -v yq >/dev/null 2>&1; then
     exit 1
 fi
 
+# preparation
+if [ ! -f "$REPO_ROOT/confs/.config/git/config_alt" ]; then
+    echo "config_alt is not copied yet. so automatically copying it."
+    cp "$REPO_ROOT/confs/.config/git/config_alt.example" "$REPO_ROOT/confs/.config/git/config_alt"
+fi
+
 # Parse links from YAML and create symbolic links
 yq eval '.links[] | .source + ":" + .destination' "$LINKS_CONFIG" | while IFS=: read -r source dest; do
     # Resolve absolute paths

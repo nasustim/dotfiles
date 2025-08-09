@@ -3,12 +3,12 @@
 
 links:
   # vim configuration
-  - source: confs/vim/.vimrc
+  - source: confs/.vimrc
     destination: .vimrc
 
   # tmux configuration  
-  - source: confs/.config/tmux/tmux.conf
-    destination: .config/tmux/tmux.conf
+  - source: confs/.config/tmux/.tmux.conf
+    destination: .config/tmux/.tmux.conf
 
   # git configuration
   - source: confs/.config/git/ignore
@@ -21,20 +21,20 @@ links:
     destination: .config/git/config_alt
 
   # zsh configuration
-  - source: confs/zsh/.zsh
+  - source: confs/.zsh
     destination: .zsh
 
-  - source: confs/zsh/.zshenv
+  - source: confs/.zshenv
     destination: .zshenv
 
-  - source: confs/zsh/.zshrc
+  - source: confs/.zshrc
     destination: .zshrc
 
   # claude configuration
-  - source: confs/claude/.claude/CLAUDE.md
+  - source: confs/.claude/CLAUDE.md
     destination: .claude/CLAUDE.md
 
-  - source: confs/claude/.claude/settings.json
+  - source: confs/.claude/settings.json
     destination: .claude/settings.json
 
   # mise
