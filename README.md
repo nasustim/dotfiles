@@ -1,10 +1,21 @@
 # nasustim/dotfiles
 
-## instlation
+My configuration files
 
+## Dependencies
+
+- [yq](https://github.com/mikefarah/yq)
+
+## Usage
+
+### Deploy configuration files
+
+```sh
+make
 ```
-$ git clone git@github.com:nasustim/dotfiles.git dotfiles
 
-$ cd dotfiles
-$ make
+### Clean
+
+```sh
+make clean
 ```
