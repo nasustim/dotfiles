@@ -14,11 +14,6 @@ else
   ln -fsv "${PWD}/git/.gitconfig" "${HOME}/.gitconfig"
 fi
 
-if [ ! -e "${PWD}/git/.gitconfig_formal" ]; then
-  cp "${PWD}/git/.gitconfig_formal.example" "${PWD}/git/.gitconfig_formal"
-  echo "make git/.gitconfig_formal. edit it!"
-fi
-
 if [ -L "${HOME}/.gitconfig_formal" ]; then
   echo "skip link .gitconfig_formal"
 else

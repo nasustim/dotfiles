@@ -29,5 +29,5 @@ clean:
 	unlink "${HOME}/.tmux.conf"
 	unlink "${HOME}/.gitignore_global"
 	unlink "${HOME}/.cargo/env"
-	unlink "${HOME}/.config/claude/settings.json"
-	unlink "${HOME}/.config/claude/CLAUDE.md"
+	unlink "${HOME}/.claude/settings.json"
+	unlink "${HOME}/.claude/CLAUDE.md"
