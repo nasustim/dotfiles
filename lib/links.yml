@@ -11,8 +11,8 @@ links:
     destination: .tmux.conf
 
   # git configuration
-  - source: confs/git/.gitignore_global
-    destination: .gitignore_global
+  - source: confs/git/.config/git/ignore
+    destination: .config/git/ignore
 
   - source: confs/git/.gitconfig
     destination: .gitconfig
