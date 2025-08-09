@@ -15,4 +15,26 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3.5.3
-      - run: make
+      - name: Test link and unlink functionality
+        run: |
+          # Test linking
+          make
+          
+          # Count created symlinks
+          LINK_COUNT=$(find ~ -maxdepth 3 -type l | wc -l | tr -d ' ')
+          echo "Created $LINK_COUNT symbolic links"
+          
+          # Test unlinking
+          make clean
+          
+          # Verify all symlinks were removed
+          REMAINING_LINKS=$(find ~ -maxdepth 3 -type l | wc -l | tr -d ' ')
+          echo "Remaining symbolic links: $REMAINING_LINKS"
+          
+          if [ "$REMAINING_LINKS" -gt 0 ]; then
+            echo "Error: Some symbolic links were not removed"
+            find ~ -maxdepth 3 -type l
+            exit 1
+          fi
+          
+          echo "Link/unlink test passed successfully"
