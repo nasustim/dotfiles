@@ -7,14 +7,14 @@ if [ -L "${HOME}/.cargo/env" ]; then
 else
   echo "add symbolic link .cargo/env"
   mkdir "${HOME}/.cargo"
-  ln -fsv "${PWD}/${TYPE}/.cargo/env" "${HOME}/.cargo/env"
+  ln -fsv "${PWD}/src/${TYPE}/.cargo/env" "${HOME}/.cargo/env"
 fi
 
 if [ -L "${HOME}/.asdfrc" ]; then
   echo "skip link .asdfrc"
 else
   echo "add symbolic link .asdfrc"
-  ln -fsv "${PWD}/${TYPE}/asdf/.asdfrc" "${HOME}/.asdfrc"
+  ln -fsv "${PWD}/src/${TYPE}/asdf/.asdfrc" "${HOME}/.asdfrc"
 fi
 
 ASDF_GOLANG_MOD_VERSION_ENABLED=true

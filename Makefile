@@ -27,6 +27,8 @@ clean:
 	unlink "${HOME}/.zshenv"
 	unlink "${HOME}/.vimrc"
 	unlink "${HOME}/.tmux.conf"
+	unlink "$(HOME)/.gitconfig"
+	unlink "$(HOME)/.gitconfig_alt"
 	unlink "${HOME}/.gitignore_global"
 	unlink "${HOME}/.cargo/env"
 	unlink "${HOME}/.claude/settings.json"

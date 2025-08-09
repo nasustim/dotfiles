@@ -2,9 +2,9 @@
 	name = nasustim
 	email = mitsuhibino@gmail.com
 
-# 個人メールアドレスでコミットしたくないリポジトリは~/project以下に置く
+# Apply alternative configuration in project dir
 [includeIf "gitdir:~/project/**"]
-  path = ~/.gitconfig_formal
+  path = ~/.gitconfig_alt
 [credential]
 	helper = manager-core
 [fetch]
