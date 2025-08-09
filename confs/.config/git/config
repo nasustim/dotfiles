@@ -9,3 +9,7 @@
 	helper = manager-core
 [fetch]
 	prune = true
+[color]
+	status = auto
+	branch = auto
+	interactive = auto
