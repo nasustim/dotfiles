@@ -7,8 +7,11 @@ on:
       - main
 
 jobs:
-  on-macos:
-    runs-on: macos-latest
+  test:
+    strategy:
+      matrix:
+        os: [macos-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3.5.3
       - run: make
