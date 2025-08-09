@@ -30,16 +30,13 @@ links:
   - source: confs/zsh/.zshrc
     destination: .zshrc
 
-  # misc configuration
-  - source: confs/misc/.cargo/env
-    destination: .cargo/env
-
-  - source: confs/misc/asdf/.asdfrc
-    destination: .asdfrc
-
   # claude configuration
   - source: confs/claude/.claude/CLAUDE.md
     destination: .claude/CLAUDE.md
 
   - source: confs/claude/.claude/settings.json
     destination: .claude/settings.json
+
+  # mise
+  - source: confs/.config/mise/config.toml
+    destination: .config/mise/config.toml
