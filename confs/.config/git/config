@@ -5,10 +5,14 @@
 # Apply alternative configuration in project dir
 [includeIf "gitdir:~/project/**"]
   path = ~/.config/git/config_alt
+
 [credential]
-	helper = manager-core
+  helper = osxkeychain
+  helper = cache --timeout 30000
+
 [fetch]
 	prune = true
+
 [color]
 	status = auto
 	branch = auto
