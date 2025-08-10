@@ -2,3 +2,4 @@
 node = "22.12.0"
 "npm:@anthropic-ai/claude-code" = "1.0.72"
 "npm:ccusage" = "15.9.1"
+uv = "0.8.8"
