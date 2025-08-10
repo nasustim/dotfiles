@@ -9,6 +9,14 @@ if [ ! -d "$CONFS_DIR" ]; then
     exit 1
 fi
 
+## download git-prompt
+if [ ! -d "$CONFS_DIR/.zsh" ]; then
+    mkdir -p "$CONFS_DIR/.zsh"
+fi
+curl -o "$CONFS_DIR/.zsh/git-prompt.sh" https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+curl -o "$CONFS_DIR/.zsh/git-completion.bash" https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+curl -o "$CONFS_DIR/.zsh/_git" https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
+
 # preparation
 if [ ! -f "$CONFS_DIR/.config/git/config_alt" ]; then
     echo "config_alt is not copied yet. so automatically copying it."
