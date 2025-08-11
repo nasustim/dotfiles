@@ -8,8 +8,10 @@
   ],
   "packageRules": [
     {
-      "matchFile": "confs/.config/mise/config.toml",
-      "packageManagers": [
+      "matchFileNames": [
+        "confs/.config/mise/config.toml"
+      ],
+      "matchManagers": [
         "mise"
       ]
     }
