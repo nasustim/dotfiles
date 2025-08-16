@@ -5,23 +5,26 @@
   "includeCoAuthoredBy": true,
   "permissions": {
     "allow": [
-      "Bash(npm:*)",
-      "Bash(pnpm:*)",
-      "Bash(bun:*)",
-      "Bash(git:*)",
+      "Bash(*)",
+      "Read(*)",
       "WebFetch(*)",
       "WebSearch"
     ],
     "deny": [
       "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(rm:*)",
+      "Bash(cat:*)", // expect to be used Read instead
       "Bash(npm publish:*)",
       "Bash(pnpm publish:*)",
       "Bash(bun publish:*)",
       "Bash(git push:*)",
       "Bash(git reset:*)",
       "Bash(git rebase:*)",
+      // prohibit access to secrets
       "Read(.env.*)",
-      "Read(**/secrets/**)"
+      "Read(**/secrets/**)",
+      "Read(.dev.var)"
     ],
     "defaultMode": "plan"
   },
