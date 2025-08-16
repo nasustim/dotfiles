@@ -8,38 +8,24 @@
       "Bash(*)",
       "Read(*)",
       "WebFetch(*)",
-      "WebSearch"
+      "WebSearch(*)"
     ],
     "deny": [
       "Bash(curl:*)",
       "Bash(wget:*)",
       "Bash(rm:*)",
-      "Bash(cat:*)", // expect to be used Read instead
+      "Bash(cat:*)",
       "Bash(npm publish:*)",
       "Bash(pnpm publish:*)",
       "Bash(bun publish:*)",
       "Bash(git push:*)",
       "Bash(git reset:*)",
       "Bash(git rebase:*)",
-      // prohibit access to secrets
       "Read(.env.*)",
       "Read(**/secrets/**)",
       "Read(.dev.var)"
     ],
     "defaultMode": "plan"
-  },
-  "hooks": {
-    "Notification": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "afplay /System/Library/Sounds/Basso.aiff"
-          }
-        ]
-      }
-    ]
   },
   "statusLine": {
     "type": "command",
