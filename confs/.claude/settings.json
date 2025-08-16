@@ -8,7 +8,9 @@
       "Bash(npm:*)",
       "Bash(pnpm:*)",
       "Bash(bun:*)",
-      "Bash(git:*)"
+      "Bash(git:*)",
+      "WebFetch(*)",
+      "WebSearch"
     ],
     "deny": [
       "Bash(curl:*)",
