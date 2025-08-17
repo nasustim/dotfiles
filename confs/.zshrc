@@ -41,6 +41,7 @@ alias ls="ls -G"
 alias grep="grep -G"
 alias reload="source ~/.zshrc"
 alias cs=cursor
+alias claude="claude --dangerously-skip-permissions"
 
 # git
 if type "git" > /dev/null 2>&1; then
