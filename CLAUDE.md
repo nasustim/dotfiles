@@ -55,3 +55,4 @@ The git setup includes multiple identity configurations:
 The repository includes Claude Code configuration files in `confs/claude/.claude/`:
 - `settings.json` - Permissions and environment settings
 - `CLAUDE.md` - Core development principles (implement without breaking tests/linters)
+- When context7 MCP is available, use context7 for library specification research
