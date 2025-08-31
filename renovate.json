@@ -5,15 +5,5 @@
   ],
   "schedule": [
     "before 8am on Saturday"
-  ],
-  "packageRules": [
-    {
-      "matchFileNames": [
-        "confs/.config/mise/config.toml"
-      ],
-      "matchManagers": [
-        "mise"
-      ]
-    }
   ]
 }

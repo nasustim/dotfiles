@@ -4,6 +4,8 @@ SCRIPT_DIR="$(dirname "$0")"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 CONFS_DIR="$REPO_ROOT/confs"
 
+ln -fsv "$REPO_ROOT/.mise.toml" "$CONFS_DIR/.config/mise/config.toml"
+
 if [ ! -d "$CONFS_DIR" ]; then
     echo "Error: Configuration directory not found: $CONFS_DIR"
     exit 1

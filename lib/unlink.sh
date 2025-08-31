@@ -34,4 +34,6 @@ find "$CONFS_DIR" -type f | while read -r source_file; do
     fi
 done
 
+unlink "$CONFS_DIR/.config/mise/config.toml"
+
 echo "Symbolic links removal completed"
