@@ -26,10 +26,5 @@
       "Read(.dev.var)"
     ],
     "defaultMode": "bypassPermissions"
-  },
-  "statusLine": {
-    "type": "command",
-    "command": "if command -v ccusage &> /dev/null; then ccusage statusline; fi",
-    "padding": 0
   }
 }
