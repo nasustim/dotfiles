@@ -4,7 +4,6 @@
 [tools]
 node = "22.12.0"
 "npm:@anthropic-ai/claude-code" = "2.0.29"
-"npm:ccusage" = "15.9.7"
 "npm:wrangler" = "4.30.0"
 "npm:@openai/codex" = "0.50.0"
 uv = "0.8.8"
