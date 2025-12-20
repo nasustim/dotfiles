@@ -2,7 +2,7 @@
 # to make it recognized from renovate
 
 [tools]
-node = "22.12.0"
+node = "24.12.0"
 "npm:@anthropic-ai/claude-code" = "2.0.74"
 "npm:ccusage" = "15.9.7"
 "npm:wrangler" = "4.30.0"
