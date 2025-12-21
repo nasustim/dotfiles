@@ -17,5 +17,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v6.0.1
+      - uses: jdx/mise-action@v2.4.4
       - run: make
       - run: make clean
