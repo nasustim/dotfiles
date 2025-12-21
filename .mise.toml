@@ -14,11 +14,10 @@ flutter = "3.38.5-stable"
 bun = "1.3.5"
 ollama = "0.13.4"
 ripgrep = "15.1.0"
-gcloud = "latest"
-go = "latest"
-jq = "latest"
-yq = "latest"
-awscli = "latest"
+go = "1.25.5"
+jq = "1.8.1"
+yq = "4.50.1"
+awscli = "2.32.21"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby"]
