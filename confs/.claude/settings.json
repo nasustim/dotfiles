@@ -5,10 +5,8 @@
   "includeCoAuthoredBy": true,
   "permissions": {
     "allow": [
-      "Bash(*)",
-      "Read(*)",
-      "WebFetch(*)",
-      "WebSearch(*)"
+      "Bash",
+      "Read"
     ],
     "deny": [
       "Bash(curl:*)",
@@ -26,5 +24,8 @@
       "Read(.dev.var)"
     ],
     "defaultMode": "bypassPermissions"
+  },
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true
   }
 }
