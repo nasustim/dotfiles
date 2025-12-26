@@ -17,7 +17,7 @@ ripgrep = "15.1.0"
 go = "1.25.5"
 jq = "1.8.1"
 yq = "4.50.1"
-awscli = "2.32.22"
+awscli = "2.32.23"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby"]
