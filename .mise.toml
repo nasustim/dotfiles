@@ -18,6 +18,7 @@ go = "1.25.5"
 jq = "1.8.1"
 yq = "4.50.1"
 awscli = "2.32.24"
+terraform = "1.8.5"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby"]
