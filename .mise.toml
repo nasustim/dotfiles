@@ -17,7 +17,7 @@ ripgrep = "15.1.0"
 go = "1.25.5"
 jq = "1.8.1"
 yq = "4.50.1"
-terraform = "1.8.5"
+terraform = "1.14.3"
 awscli = "2.32.26"
 
 [settings]
