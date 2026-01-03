@@ -18,7 +18,7 @@ go = "1.25.5"
 jq = "1.8.1"
 yq = "4.50.1"
 terraform = "1.8.5"
-awscli = "2.32.26"
+awscli = "2.32.28"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby"]
