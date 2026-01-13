@@ -3,3 +3,11 @@ template = '{{.Host}}/{{.Owner}}/{{.Repository}}={{.Branch}}'
 
 [worktree]
 basedir = '~/ghq'
+
+[naming.sanitize_chars]
+'/' = '-'
+':' = '-'
+
+[ui]
+icons = true
+tilde_home = true
