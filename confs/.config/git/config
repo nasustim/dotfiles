@@ -17,3 +17,6 @@
 	status = auto
 	branch = auto
 	interactive = auto
+
+[ghq]
+  root = ~/ghq
