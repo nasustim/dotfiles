@@ -21,6 +21,7 @@ awscli = "2.32.32"
 terraform = "1.14.3"
 "go:github.com/d-kuro/gwq/cmd/gwq" = "0.0.7"
 "go:github.com/x-motemen/ghq" = "1.8.0"
+pnpm = "10.28.1"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby"]
