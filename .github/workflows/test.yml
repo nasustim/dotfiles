@@ -16,7 +16,7 @@ jobs:
           - ubuntu-latest
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v6.0.1
+      - uses: actions/checkout@v6.0.2
       - uses: jdx/mise-action@v3.5.1
       - run: make
       - run: make clean
