@@ -6,19 +6,25 @@
   "permissions": {
     "allow": [
       "Bash",
-      "Read"
+      "Read",
+      "WebFetch",
+      "WebSearch"
     ],
-    "deny": [
+    "ask": [
       "Bash(curl:*)",
       "Bash(wget:*)",
       "Bash(rm:*)",
+      "Bash(git rm:*)",
+      "Bash(git reset:*)"
+    ],
+    "deny": [
       "Bash(cat:*)",
       "Bash(npm publish:*)",
       "Bash(pnpm publish:*)",
       "Bash(bun publish:*)",
       "Bash(git push:*)",
-      "Bash(git reset:*)",
       "Bash(git rebase:*)",
+      "Read(.env)",
       "Read(.env.*)",
       "Read(**/secrets/**)",
       "Read(.dev.var)"
