@@ -1,6 +1,21 @@
 ## setup prompt stype
 setopt prompt_subst
-PROMPT='%F{green}[%n@%m%f %F{blue}%c%f%F{green}]%f$(__git_ps1 "(%s)") '
+
+# カレントディレクトリ名を表示（git管理下で=を含む場合は=より前のみ）
+function __prompt_dirname() {
+  local dirname="${PWD##*/}"
+  if git rev-parse --is-inside-work-tree &>/dev/null; then
+    if [[ "$dirname" == *"="* ]]; then
+      echo "${dirname%%=*}"
+    else
+      echo "$dirname"
+    fi
+  else
+    echo "$dirname"
+  fi
+}
+
+PROMPT='%F{green}[%n@%m%f %F{blue}$(__prompt_dirname)%f%F{green}]%f$(__git_ps1 "(%s)") '
 
 # terminal settings
 export LSCOLORS=cxfxcxdxbxegedabagacad
