@@ -19,7 +19,7 @@ jq = "1.8.1"
 yq = "4.50.1"
 awscli = "2.32.32"
 terraform = "1.14.5"
-"go:github.com/d-kuro/gwq/cmd/gwq" = "0.0.12"
+"go:github.com/d-kuro/gwq/cmd/gwq" = "0.0.13"
 "go:github.com/x-motemen/ghq" = "1.8.0"
 pnpm = "10.28.2"
 
