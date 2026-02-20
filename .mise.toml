@@ -4,7 +4,7 @@
 [tools]
 node = "24.13.1"
 "npm:@anthropic-ai/claude-code" = "2.1.49"
-"npm:wrangler" = "4.57.0"
+"npm:wrangler" = "4.67.0"
 "npm:@openai/codex" = "0.104.0"
 uv = "0.9.23"
 gh = "2.78.0"
