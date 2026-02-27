@@ -11,13 +11,6 @@
       "WebFetch",
       "WebSearch"
     ],
-    "ask": [
-      "Bash(curl:*)",
-      "Bash(wget:*)",
-      "Bash(rm:*)",
-      "Bash(git rm:*)",
-      "Bash(git reset:*)"
-    ],
     "deny": [
       "Bash(cat:*)",
       "Bash(npm publish:*)",
@@ -30,9 +23,17 @@
       "Read(**/secrets/**)",
       "Read(.dev.var)"
     ],
+    "ask": [
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(rm:*)",
+      "Bash(git rm:*)",
+      "Bash(git reset:*)"
+    ],
     "defaultMode": "bypassPermissions"
   },
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true
-  }
+  },
+  "skipDangerousModePermissionPrompt": true
 }
