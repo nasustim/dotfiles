@@ -149,7 +149,7 @@ function gi() {
   if [ -z "$template" ]; then
     gh api gitignore/templates --jq '.[]'
   else
-    result="$(gh api "gitignore/templates/$template" --jq '.source' 2>/dev/null)"
+    result="$(gh api "gitignore/templates/$template" --jq '.source')"
     if [ $? -ne 0 ]; then
       echo "Template '$template' not found."
       return 1

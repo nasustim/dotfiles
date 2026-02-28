@@ -83,6 +83,4 @@ $RECYCLE.BIN/
 
 confs/.zsh
 confs/.config/git/config_alt
-
-# 
 confs/.config/mise/config.toml
