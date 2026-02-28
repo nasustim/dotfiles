@@ -43,9 +43,6 @@ GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 
-# get .gitignore
-function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
-
 ## aliases
 alias lla="ls -la"
 alias ll="ls -l"
@@ -142,3 +139,21 @@ if [ -s "$HOME/.bun/_bun" ]; then
   export BUN_INSTALL="$HOME/.bun"
   export PATH="$BUN_INSTALL/bin:$PATH"
 fi
+
+# .gitignore utility using GitHub API
+# Usage:
+#   gi <template>  # append file list to .gitignore with the specified template
+#   gi             # list available templates
+function gi() {
+  template="$1"
+  if [ -z "$template" ]; then
+    gh api gitignore/templates
+  else
+    l="$(gh api gitignore/templates/$template)"
+    if [ $? -ne 0 ]; then
+      echo "Template '$template' not found."
+      return 1
+    fi
+    echo "$l" | jq -r '.source' >> .gitignore
+  fi
+}
