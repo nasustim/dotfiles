@@ -147,13 +147,12 @@ fi
 function gi() {
   template="$1"
   if [ -z "$template" ]; then
-    gh api gitignore/templates
+    gh api gitignore/templates --jq '.[]'
   else
-    l="$(gh api gitignore/templates/$template)"
+    gh api "gitignore/templates/$template" --jq '.source' >> .gitignore
     if [ $? -ne 0 ]; then
       echo "Template '$template' not found."
       return 1
     fi
-    echo "$l" | jq -r '.source' >> .gitignore
   fi
 }
