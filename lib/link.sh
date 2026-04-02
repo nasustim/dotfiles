@@ -26,7 +26,7 @@ if [ ! -f "$CONFS_DIR/.config/git/config_alt" ]; then
 fi
 
 # Find all files in confs directory and create symbolic links
-find "$CONFS_DIR" -type f | while read -r abs_source; do
+find "$CONFS_DIR" \( -type f -o -type l \) | while read -r abs_source; do
     # Get relative path from confs directory
     relative_path="${abs_source#$CONFS_DIR/}"
     

@@ -10,7 +10,7 @@ if [ ! -d "$CONFS_DIR" ]; then
 fi
 
 # Find all files in confs directory and remove corresponding symlinks
-find "$CONFS_DIR" -type f | while read -r source_file; do
+find "$CONFS_DIR" \( -type f -o -type l \) | while read -r source_file; do
     # Get relative path from confs directory
     relative_path="${source_file#$CONFS_DIR/}"
     
