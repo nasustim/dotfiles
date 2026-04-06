@@ -5,4 +5,5 @@
 **MUST** If the project you are working on has a testing system, write tests following the specifications first, then implement the system (test-driven development).
 **MUST** Always verify functionality using tests and linters.
 **SHOULD** Use gh command to check codes and documents on GitHub.
+**SHOULD** Commit your changes after completing each step, unless the operator instructs you to wait.
 
