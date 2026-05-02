@@ -15,7 +15,7 @@ go = "1.26.2"
 jq = "1.8.1"
 yq = "4.52.5"
 awscli = "2.33.31"
-"go:github.com/d-kuro/gwq/cmd/gwq" = "0.0.13"
+"go:github.com/d-kuro/gwq/cmd/gwq" = "0.1.1"
 "go:github.com/x-motemen/ghq" = "1.9.4"
 
 [settings]
