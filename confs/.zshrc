@@ -133,6 +133,17 @@ if [ -d "/Applications/Android\ Studio.app/Contents/jbr/Contents/Home" ]; then
   export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 fi
 
+# pnpm
+if type "pnpm" > /dev/null 2>&1; then
+  if [ -d "$HOME/Library/pnpm" ]; then
+    export PNPM_HOME="$HOME/Library/pnpm"
+    case ":$PATH:" in
+      *":$PNPM_HOME/bin:"*) ;;
+      *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+    esac
+  fi
+fi
+
 # bun completions
 if [ -s "$HOME/.bun/_bun" ]; then
   source "$HOME/.bun/_bun"

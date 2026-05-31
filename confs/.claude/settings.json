@@ -38,5 +38,7 @@
     "claude-md-management@claude-plugins-official": true,
     "chrome-devtools-mcp@claude-plugins-official": true
   },
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "theme": "dark-daltonized",
+  "verbose": true
 }
