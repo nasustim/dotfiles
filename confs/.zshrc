@@ -134,14 +134,12 @@ if [ -d "/Applications/Android\ Studio.app/Contents/jbr/Contents/Home" ]; then
 fi
 
 # pnpm
-if type "pnpm" > /dev/null 2>&1; then
-  if [ -d "$HOME/Library/pnpm" ]; then
-    export PNPM_HOME="$HOME/Library/pnpm"
-    case ":$PATH:" in
-      *":$PNPM_HOME/bin:"*) ;;
-      *) export PATH="$PNPM_HOME/bin:$PATH" ;;
-    esac
-  fi
+if type "pnpm" > /dev/null 2>&1 && [ -d "$HOME/Library/pnpm" ]; then
+  export PNPM_HOME="$HOME/Library/pnpm"
+  case ":$PATH:" in
+    *":$PNPM_HOME/bin:"*) ;;
+    *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+  esac
 fi
 
 # bun completions
