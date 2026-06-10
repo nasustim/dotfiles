@@ -47,5 +47,6 @@
     "chrome-devtools-mcp@claude-plugins-official": true
   },
   "skipDangerousModePermissionPrompt": true,
-  "theme": "dark-daltonized"
+  "theme": "dark-daltonized",
+  "verbose": true
 }
