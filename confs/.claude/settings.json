@@ -9,7 +9,12 @@
       "Bash",
       "Read",
       "WebFetch",
-      "WebSearch"
+      "WebSearch",
+      "Skill(browser-test)",
+      "Skill(browser-test:*)",
+      "mcp__plugin_chrome-devtools-mcp_chrome-devtools__*",
+      "mcp__chrome-devtools-mcp__*",
+      "mcp__plugin_context7_context7__*"
     ],
     "deny": [
       "Bash(cat:*)",
@@ -30,7 +35,10 @@
       "Bash(git rm:*)",
       "Bash(git reset:*)"
     ],
-    "defaultMode": "bypassPermissions"
+    "defaultMode": "bypassPermissions",
+    "additionalDirectories": [
+      "/Users/mitsu/ghq/github.com/nasustim/blog.nasustim.com-internal/.github/workflows"
+    ]
   },
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true,
@@ -38,5 +46,6 @@
     "claude-md-management@claude-plugins-official": true,
     "chrome-devtools-mcp@claude-plugins-official": true
   },
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "theme": "dark-daltonized"
 }
