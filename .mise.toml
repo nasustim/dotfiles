@@ -3,7 +3,7 @@
 
 [tools]
 node = "24.16.0"
-"npm:@anthropic-ai/claude-code" = "2.1.167"
+"npm:@anthropic-ai/claude-code" = "2.1.170"
 "npm:@openai/codex" = "0.137.0"
 "npm:@github/copilot" = "1.0.61"
 uv = "0.11.19"
