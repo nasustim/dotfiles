@@ -35,10 +35,7 @@
       "Bash(git rm:*)",
       "Bash(git reset:*)"
     ],
-    "defaultMode": "bypassPermissions",
-    "additionalDirectories": [
-      "/Users/mitsu/ghq/github.com/nasustim/blog.nasustim.com-internal/.github/workflows"
-    ]
+    "defaultMode": "bypassPermissions"
   },
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true,
