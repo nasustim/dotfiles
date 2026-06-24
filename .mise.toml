@@ -19,4 +19,4 @@ awscli = "2.34.63"
 "go:github.com/x-motemen/ghq" = "1.10.1"
 
 [settings]
-idiomatic_version_file_enable_tools = ["ruby"]
+idiomatic_version_file_enable_tools = ["ruby", "terraform"]
