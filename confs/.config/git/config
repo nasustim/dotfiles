@@ -2,8 +2,8 @@
 	name = nasustim
 	email = mitsuhibino@gmail.com
 
-# Apply alternative configuration in project dir
-[includeIf "gitdir:~/project/**"]
+# Load alternative configuration; it applies its own directory-specific rules.
+[include]
   path = ~/.config/git/config_alt
 
 [credential]
