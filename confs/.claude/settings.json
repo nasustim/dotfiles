@@ -45,5 +45,7 @@
   },
   "skipDangerousModePermissionPrompt": true,
   "theme": "dark-daltonized",
-  "verbose": true
+  "verbose": true,
+  "effortLevel": "high",
+  "model": "opus[1m]"
 }
