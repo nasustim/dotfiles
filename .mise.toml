@@ -5,7 +5,7 @@
 node = "24.16.0"
 "npm:@anthropic-ai/claude-code" = "2.1.287"
 "npm:@openai/codex" = "0.156.1"
-"npm:@github/copilot" = "1.0.83"
+"npm:@github/copilot" = "1.0.91"
 uv = "0.12.18"
 gh = "2.101.0"
 rust = "1.98.1"
