@@ -7,4 +7,4 @@
 **MUST** Always verify functionality using tests and linters.
 **SHOULD** Use gh command to check codes and documents on GitHub.
 **SHOULD** Commit your changes after completing each step, unless the operator instructs you to wait.
-
+**SHOULD** Express "How" in code, "What" in test code, "Why" in commit messages, and "Why not" in code comments. Avoid writing code comments for anything else.
