@@ -1,4 +1,6 @@
 codex_git_commit = true
+model = "gpt-6.1-sol"
+model_reasoning_effort = "high"
 
 [plugins."github@openai-curated"]
 enabled = true
