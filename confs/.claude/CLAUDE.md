@@ -8,3 +8,4 @@
 **SHOULD** Use gh command to check codes and documents on GitHub.
 **SHOULD** Commit your changes after completing each step, unless the operator instructs you to wait.
 **SHOULD** Express "How" in code, "What" in test code, "Why" in commit messages, and "Why not" in code comments. Avoid writing code comments for anything else.
+**MUST** Leave no worktree remnants: when a worktree task (including subagents' `.claude/worktrees/agent-*`) ends, delete the worktree, its branch, and its dedicated build directories. First merge into the main branch, or else commit and tag `archive/<worktree name>`, then `git worktree remove` + `git branch -D`. Orchestrators clean up the worktrees they spawned. If one must be kept, state its path and reason in the final reply.
